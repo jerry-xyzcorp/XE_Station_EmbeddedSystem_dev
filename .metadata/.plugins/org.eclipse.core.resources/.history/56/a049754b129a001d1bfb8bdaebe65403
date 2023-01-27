@@ -1,0 +1,147 @@
+#include "test.h"
+#include "parson.h"
+//#include "main.h"
+
+//#include <stdio.h>
+//#include <string.h>
+#define OBTAIN_FIRMWARE_VERSION 0
+#define SET_I2C 				1
+#define SAVE_SETTING			2
+#define SYSTEM_RESET			3
+#define SET_OUTPUT_CM		    4
+#define SET_OUTPUT_MM			5
+#define OBTAIN_DATA_CM			6
+#define OBTAIN_DATA_MM			7
+
+uint8_t* initPacket(uint8_t mode)
+{
+	// packet order : [header] [len] ... [checksum]
+	uint8_t TFminiS_req_packet_list[][5] =
+			{
+					{0x5a, 0x04, 0x01, 0x5f, 0x00},// Obtain firmware version
+					{0x5a, 0x05, 0x0a, 0x01, 0x00},// I2C setting - Communication interface
+					{0x5a, 0x04, 0x11, 0x6f, 0x00},// save settings
+					{0x5a, 0x04, 0x02, 0x60, 0x00},// system reset
+					{0x5a, 0x05, 0x05, 0x01, 0x65},// set Output format: standard 9 bytes(cm)
+					{0x5a, 0x05, 0x05, 0x06, 0x6a},// set Output format: standard 9 bytes(mm)
+					{0x5a, 0x05, 0x00, 0x01, 0x60},// obtain data frame(9bytes-cm)
+					{0x5a, 0x05, 0x00, 0x06, 0x65},// obtain data frame(9bytes-mm)
+			};
+
+	// calc checksum
+
+
+
+	return TFminiS_req_packet_list[mode];
+}
+
+uint16_t getDistance(uint8_t sensor_id)
+{
+	return 0;
+}
+
+void jsonTest(void)
+{
+	JSON_Value *rootValue;
+	JSON_Object *rootObject;
+
+	rootValue = json_parse_file("test.json");
+	rootObject = json_value_get_object(rootValue);
+
+	printf("Greeting: %s\n", json_object_get_string(rootObject, "Greeting"));
+	printf("Num: %d\n", (int)json_object_get_number(rootObject, "Num"));
+	printf("DNum: %.1lf\n", json_object_get_number(rootObject, "DNum"));
+	JSON_Object *rootObject_feedsList;
+	rootObject_feedsList = json_value_get_object(json_object_get_object(rootObject,"feedsList"));
+//	(int)json_object_get_number(rootObject_feedsList, "ida");
+	printf("Num: %d\n", (int)json_object_get_number(rootObject_feedsList, "Num"));
+
+	printf("array: ");
+	JSON_Array *array = json_object_get_array(rootObject, "array");
+	for (int i = 0; i < json_array_get_count(array); i++)
+	{
+		printf("%d ", (int)json_array_get_number(array, i));
+	}
+
+	printf("\nboolean: %d\n", json_object_get_boolean(rootObject, "boolean"));
+
+	json_value_free(rootValue);
+//	return ;
+}
+
+
+void TFminiSTest(void)
+{
+	uint8_t TFminiS_req_packet = initPacket(OBTAIN_FIRMWARE_VERSION);
+	// I2C
+	// ver1.
+//	uint8_t TFminiAddr[1] = {0x10};
+//	HAL_StatusTypeDef error;
+//	uint8_t buffer[128] = {0x10};
+//	error = HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR, buffer, 3, HAL_MAX_DELAY);
+//	if (error != HAL_OK) while()
+//	while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+
+	// ver2.
+//	uint8_t buf[1] = {0x10};
+//	uint8_t rxbuf[1] = {0};
+//	uint8_t rxdata[20] = {0};
+//
+//	//////////////////////////////////
+//	// 1. write
+//	uint8_t ret = HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR, TFminiS_req_packet, sizeof(TFminiS_req_packet), 10);
+//
+//	if ( ret != HAL_OK ) {
+//	   sprintf(uartBuf, "Error TX : %d\n", ret);
+//	   HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);
+//	}
+//	else
+//	{
+//		HAL_Delay(100);
+//
+//		 // 2. read
+//		 ret = HAL_I2C_Master_Transmit(&hi2c1, SLAVE_ADDR|0x01, buf, sizeof(buf), 10);
+//
+//		 for(int i=0; i<sizeof(rxdata); i++){
+//			 if ( ret == HAL_OK ){
+//				 ret = HAL_I2C_Master_Receive(&hi2c1, SLAVE_ADDR|0x01, rxbuf, sizeof(rxbuf), HAL_MAX_DELAY);
+//				 if ( ret == HAL_OK ){
+//					 sprintf(uartBuf, "%x \r", rxbuf[0]);
+//					 HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);
+//					 rxdata[i] = rxbuf[0];
+//				 }
+//			 }
+//		 }
+//
+//	}
+//
+//	// calc distance
+//	uint16_t distance = 0;
+//	for(int i=0; i<sizeof(rxdata); i++){
+//		if(rxdata[i] == 0x59 && rxdata[i+1] == 0x59){
+//			distance = rxdata[i+2]|(rxdata[i+3]<<8);
+//			break;
+//		}
+//	}
+//	sprintf(uartBuf, " -- distance : %d\n\n", distance);
+//	HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);
+
+
+	 // UART
+//	for(int i=0; i<sizeof(TFminiS_req_packet); i++){
+//		TFminiS_req_packet[sizeof(TFminiS_req_packet)-1] += TFminiS_req_packet[i];
+//	}
+
+//	HAL_UART_Transmit(&huart3, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
+//
+//	// request packet
+//	HAL_UART_Transmit(&huart2, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
+//
+//	for(int i=0; i<20; i++){
+//		uint8_t buf = 0;
+//		HAL_UART_Receive(&huart2, &buf, sizeof(buf), 10);
+//		HAL_UART_Transmit(&huart3, &buf, sizeof(buf), 100);
+//	}
+
+	HAL_Delay(500);
+}

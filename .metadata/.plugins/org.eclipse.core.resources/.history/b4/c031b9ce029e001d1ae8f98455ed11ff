@@ -1,0 +1,26 @@
+/*
+ * User_Lidar.h
+ *
+ *  Created on: Jan 27, 2023
+ *      Author: Ethan
+ */
+
+#ifndef INC_USER_LIDAR_H_
+#define INC_USER_LIDAR_H_
+
+#include "main.h"
+
+#define GET_DEVICE_INFO 0
+#define RUN_2D_MODE	 1
+#define RUN_3D_MODE	 2
+#define GET_DEVICE_INFO 3
+#define GET_DEVICE_INFO 4
+#define GET_DEVICE_INFO 5
+#define GET_DEVICE_INFO 6
+#define GET_DEVICE_INFO 7
+#define GET_DEVICE_INFO 8
+#define GET_DEVICE_INFO 9
+
+void Lidar3dTest(uint8_t version);
+
+#endif /* INC_USER_LIDAR_H_ */

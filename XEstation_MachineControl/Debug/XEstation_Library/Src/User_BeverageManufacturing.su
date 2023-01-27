@@ -1,0 +1,4 @@
+User_BeverageManufacturing.c:9:6:init_powderMachine	4	static
+User_BeverageManufacturing.c:14:6:motorShutdownAll_powderMachine	4	static
+User_BeverageManufacturing.c:19:9:getStatus_powderMachiner	4	static
+User_BeverageManufacturing.c:24:6:make_Beverage	16	static

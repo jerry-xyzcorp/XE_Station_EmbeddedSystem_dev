@@ -1,0 +1,20 @@
+/*
+ * User_IceDispenser.h
+ *
+ *  Created on: 2023. 1. 25.
+ *      Author: Ethan
+ */
+
+#ifndef INC_USER_ICEDISPENSER_H_
+#define INC_USER_ICEDISPENSER_H_
+
+#include "main.h"
+
+
+
+void relayTest(void);
+void iceDispenser_SetMode(void);
+
+
+
+#endif /* INC_USER_ICEDISPENSER_H_ */

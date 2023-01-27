@@ -1,0 +1,7 @@
+#include "hx711.h"
+
+void initHx711(void);
+
+uint8_t get_data(uint8_t sensor_id);
+
+uint8_t set_threash(uint8_t sensor_id);

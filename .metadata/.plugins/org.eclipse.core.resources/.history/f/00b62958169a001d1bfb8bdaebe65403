@@ -1,0 +1,19 @@
+{
+    "Num": 1,
+    "Greeting": "Hello",
+    "DNum": 1.5,
+    "array": [1,2,3,4,5],
+    "boolean": true
+	  "feedsList": [
+	    {
+	      "id": 4,
+	      "feedsProfileUrl": "./images/eunjungPark/feeds-profile.png",
+	      "userId": "eunJeong ",
+	      "feedsImageUrl": "./images/eunjungPark/feeds-image.png",
+	      "mineProfileUrl": "./images/eunjungPark/feeds-profile.png",
+	      "likeUserId": "chunSig ",
+	    },
+    ],
+	"OBTAIN_FIRMWARE_VERSION":10,
+
+}

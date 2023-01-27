@@ -1,0 +1,56 @@
+#ifndef __TEST_H
+#define __TEST_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * DEFAULT address: 0x10
+ * address range  : 0x01~0x7F
+ */
+//#include "main.h"
+#include <stdint.h>
+///////////// Slave address
+// I2C1
+#define BK01_ADDR (0x01 << 1)
+#define BK02_ADDR (0x02 << 1)
+#define BK03_ADDR (0x03 << 1)
+#define CP01_ADDR (0x21 << 1)
+#define CP02_ADDR (0x22 << 1)
+#define CP03_ADDR (0x23 << 1)
+#define CP04_ADDR (0x24 << 1)
+// I2C2
+#define LD01_ADDR (0x31 << 1)
+#define LD02_ADDR (0x32 << 1)
+#define LD03_ADDR (0x33 << 1)
+#define LD04_ADDR (0x34 << 1)
+
+#define BK01		0x01
+#define BK02		0x02
+#define BK03		0x03
+#define CP01		0x21
+#define CP02		0x22
+#define CP03		0x22
+#define CP04		0x23
+#define LD01		7
+#define LD02		7
+#define LD03		7
+#define LD04		7
+
+
+typedef enum { false, true } bool;//
+uint8_t bakery_distance_arr[3];// 		= {0,};
+uint8_t cup_distance_arr[4]; //		= {0,};
+uint8_t lid_distance_arr[4];// 		= {0,};
+bool 	is_running;// = false;
+
+uint8_t* initPacket(uint8_t mode);
+uint16_t getDistance(uint8_t sensor_id);
+void jsonTest(void);
+void TFminiSTest(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

@@ -1,0 +1,52 @@
+/*
+ * User_IceDispenser.h
+ *
+ *  Created on: 2023. 1. 25.
+ *      Author: Ethan
+ */
+
+#ifndef INC_USER_ICEDISPENSER_H_
+#define INC_USER_ICEDISPENSER_H_
+
+
+
+void relayTest(void)
+{
+	uint32_t time = 5000; // 5sec
+	HAL_GPIO_WritePin(GPIOE, Relay0_Pin, GPIO_PIN_SET);	// Relay Close
+	HAL_Delay(time);
+	sprintf(uartBuf, "reset\r\n");			//convert to string
+	HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);		//transfer the string to PC // (interface, address, buffer size, timeout)
+
+	HAL_GPIO_WritePin(GPIOE, Relay0_Pin, GPIO_PIN_RESET);	// Relay Open
+	HAL_Delay(time);
+	sprintf(uartBuf, "set\r\n");			//convert to string
+	HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);		//transfer the string to PC // (interface, address, buffer size, timeout)
+}
+void iceDispenser_SetMode(void)
+{
+	uint32_t time = 1000; // 5sec
+
+	HAL_GPIO_WritePin(ICE01_water_GPIO_Port, ICE01_water_Pin, GPIO_PIN_RESET);
+	sprintf(uartBuf, "ice01\r\n");			//convert to string
+	HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);		//transfer the string to PC // (interface, address, buffer size, timeout)
+	HAL_Delay(500);
+	HAL_GPIO_WritePin(ice01_GPIO_Port, ice01_Pin, GPIO_PIN_SET);
+
+
+	HAL_GPIO_WritePin(ice02_GPIO_Port, ice02_Pin, GPIO_PIN_RESET);
+	sprintf(uartBuf, "ice02\r\n");			//convert to string
+	HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);		//transfer the string to PC // (interface, address, buffer size, timeout)
+	HAL_Delay(500);
+	HAL_GPIO_WritePin(ice02_GPIO_Port, ice02_Pin, GPIO_PIN_SET);
+
+	HAL_GPIO_WritePin(ice03_GPIO_Port, ice03_Pin, GPIO_PIN_RESET);
+	sprintf(uartBuf, "ice03\r\n");			//convert to string
+	HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);		//transfer the string to PC // (interface, address, buffer size, timeout)
+	HAL_Delay(500);
+	HAL_GPIO_WritePin(ice03_GPIO_Port, ice03_Pin, GPIO_PIN_SET);
+}
+
+
+
+#endif /* INC_USER_ICEDISPENSER_H_ */
