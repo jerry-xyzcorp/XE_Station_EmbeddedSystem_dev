@@ -119,7 +119,7 @@ int main(void)
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
   initCupLidDispensor();
-
+  init_powderMachine();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -129,8 +129,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  SteppingMotorTest();
-
+//	  SteppingMotorTest();
+	  L298Ntest();
 //	  printf("test ..\n\n");
 
   }

@@ -57,6 +57,7 @@ typedef enum { false, true } bool;
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
+int _write(int file, char *ptr, int len);
 
 /* USER CODE END EFP */
 
@@ -113,10 +114,6 @@ void Error_Handler(void);
 #define PD04_dout_GPIO_Port GPIOD
 #define CF01_echo_Pin GPIO_PIN_14
 #define CF01_echo_GPIO_Port GPIOD
-#define Lidar1_TX_Pin GPIO_PIN_12
-#define Lidar1_TX_GPIO_Port GPIOC
-#define Lidar1_RX_Pin GPIO_PIN_2
-#define Lidar1_RX_GPIO_Port GPIOD
 #define Lidar2_RX_Pin GPIO_PIN_9
 #define Lidar2_RX_GPIO_Port GPIOG
 #define Lidar2_TX_Pin GPIO_PIN_14
