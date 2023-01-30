@@ -24,7 +24,9 @@
 #define PAYLOAD_LENGTH_LSB_INDEX 3
 #define PAYLOAD_LENGTH_MSB_INDEX 4
 #define PAYLOAD_HEADER			 5
+#define PACKET_LEN				 6
 
+#define FORMAT_CHECKSUM_LEN		1
 #define FORMAT_3D_LEN			14400
 #define FORMAT_3D_ARR			9600
 #define NO_VALUE 				0
@@ -33,8 +35,9 @@ void init_Lidar(void);
 void Lidar3dTest(void);
 void requestPacket(uint8_t packet_cmd, uint32_t value);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+void response_packet(uint8_t recv);
 
-uint8_t CalcChecksum(uint8_t* packet, uint8_t packet_size);
-uint8_t* process_lidarData_3d(uint8_t* lidarData_3d);
+uint8_t CalcChecksum(uint8_t* packet, uint32_t packet_size);
+void process_lidarData_3d(uint8_t* lidarData_3d);
 
 #endif /* INC_USER_LIDAR_H_ */

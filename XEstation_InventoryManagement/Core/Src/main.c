@@ -135,7 +135,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
-	  Lidar3dTest();
+//	  Lidar3dTest();
 
 
 	  HAL_Delay(1000);

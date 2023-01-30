@@ -10,43 +10,71 @@ extern UART_HandleTypeDef huart6; // Lidar2
 
 // lidar
 uint8_t lidar_req_packet[8]; 		// lidar request packet
-uint8_t lidar_res_packet[1447] = {0};	// lidar response packet
+uint8_t lidar_res_packet[14407] = {0};	// lidar response packet
 
 char uartBuf[4000];			//used as buffer for the string to be send to PC
 
-
+uint8_t response_packet_protocol_run_3d[] = {0x5a, 0x77, 0xff, 0x41, 0x38, 0x08};
+uint8_t recv_pre[PACKET_LEN] = {0,};
+bool receive_start_flag = false;
+bool receive_end_flag = false;
+bool RxCpltCallback_flag = false;
+uint32_t receive_packet_cnt = 0;
 
 time_t start;
 time_t end;
 
+
+uint8_t data = 0x00;
+uint32_t cnt = 0;
+uint32_t success_cnt = 0;
+uint32_t fail_cnt = 0;
+
 void init_Lidar(void)
 {
-	HAL_UART_Receive_IT(&huart5, lidar_res_packet, sizeof(lidar_res_packet));
 	  requestPacket(STOP, NO_VALUE);
 	  HAL_Delay(2000);
-
+	HAL_UART_Receive_IT(&huart5, lidar_res_packet, sizeof(lidar_res_packet));
+//	  HAL_UART_Receive_IT(&huart5, &data, sizeof(data));
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if (huart->Instance == UART5)
 	{
-		end = time(NULL);
+//	    HAL_UART_Receive_IT(&huart5, lidar_res_packet, sizeof(lidar_res_packet));
+
+//		end = time(NULL);
 
 		// print to serial monitor
-	    HAL_UART_Transmit(&huart3, lidar_res_packet, sizeof(lidar_res_packet), 100);
-//		printf("UART5 receive interrupt!, %lf\n", time(NULL));
+//	    HAL_UART_Transmit(&huart3, lidar_res_packet, sizeof(lidar_res_packet), 100);
+
+//	    HAL_UART_Transmit(&huart3, &data, sizeof(data), 100);
+//		printf("cnt : %d // %0.2x\n", cnt, data);
+		printf("cnt : %d \n", cnt);
+
+		if(cnt == 1000000){
+			cnt = 0;
+		}else{
+
+			cnt += 1;
+
+		}//		printf("UART5 receive interrupt!, %lf\n", time(NULL));
 
 //	    time_t start2 = time(NULL);
 
-//	    process_lidarData_3d(lidar_res_packet);
 //		time_t end2 = time(NULL);
 //		printf("TRANSMIT-RECEIVE TIME time : %lf\n", (double)(end - start));
 
 //		printf("ALL TIME time : %lf\n", (double)(end2 - start2));
+		RxCpltCallback_flag = true;
 
 	    // enable interrupt again
+//		response_packet(data);
+//	    HAL_UART_Receive_IT(&huart5, &data, sizeof(data));
 	    HAL_UART_Receive_IT(&huart5, lidar_res_packet, sizeof(lidar_res_packet));
+//	    requestPacket(RUN_3D_MODE, NO_VALUE);
+
 //	    requestPacket(RUN_3D_MODE, NO_VALUE);
 
 	}
@@ -64,11 +92,14 @@ void Lidar3dTest(void)
 //	  HAL_NVIC_EnableIRQ(UART5_IRQn);  //Rx callback 함수 enable
 
 	  requestPacket(RUN_3D_MODE, NO_VALUE);
-	 HAL_Delay(2000);
+	  while(1){
+		process_lidarData_3d(lidar_res_packet);
+		 HAL_Delay(20);
+	  }
 }
 
 
-uint8_t CalcChecksum(uint8_t* packet, uint8_t packet_size)
+uint8_t CalcChecksum(uint8_t* packet, uint32_t packet_size)
 {
 	uint8_t CheckSum = 0x00;
 
@@ -101,6 +132,7 @@ void requestPacket(uint8_t packet_cmd, uint32_t value)
 		break;
 	case SET_3D_PULSE_DURATION_REQUEST: // Set 3D Pulse Duration Request
 		packet_cmd = 0x0c;
+
 		break;
 	case SET_FREQ_REQUEST: // Frequency Setting Request
 		packet_cmd = 0x0f;
@@ -156,44 +188,47 @@ void requestPacket(uint8_t packet_cmd, uint32_t value)
 	HAL_UART_Transmit(&huart5, (uint8_t *)lidar_req_packet, sizeof(lidar_req_packet), 100);
 }
 
-uint8_t* process_lidarData_3d(uint8_t* lidarData_3d)
-{
-	uint8_t response_packet_protocol_run_3d[] = {0x5a, 0x77, 0xff, 0x41, 0x38, 0x08};
-	uint16_t distance_arr[FORMAT_3D_ARR] = {0};
-	uint32_t payload_data_index = 0;
 
-	for(int i=0; i<sizeof(lidarData_3d); i++){
-		printf("lidarData_3d[%d] : %0.2x\n", i, lidarData_3d[i]);
-		if(lidarData_3d[i+PACKET_HEADER_1] == response_packet_protocol_run_3d[PACKET_HEADER_1])
-			if(lidarData_3d[i+PACKET_HEADER_2] == response_packet_protocol_run_3d[PACKET_HEADER_2] &&
-				lidarData_3d[i+PACKET_HEADER_3] == response_packet_protocol_run_3d[PACKET_HEADER_3] &&
-				lidarData_3d[i+PAYLOAD_LENGTH_LSB_INDEX] == response_packet_protocol_run_3d[PAYLOAD_LENGTH_LSB_INDEX] &&
-				lidarData_3d[i+PAYLOAD_LENGTH_MSB_INDEX] == response_packet_protocol_run_3d[PAYLOAD_LENGTH_MSB_INDEX] &&
-				lidarData_3d[i+PAYLOAD_HEADER] == response_packet_protocol_run_3d[PAYLOAD_HEADER])
+void process_lidarData_3d(uint8_t* lidarData_3d)
+{
+	if(RxCpltCallback_flag == true){
+		if(lidarData_3d[PACKET_HEADER_1] == response_packet_protocol_run_3d[PACKET_HEADER_1] &&
+			lidarData_3d[PACKET_HEADER_2] == response_packet_protocol_run_3d[PACKET_HEADER_2] &&
+			lidarData_3d[PACKET_HEADER_3] == response_packet_protocol_run_3d[PACKET_HEADER_3] &&
+			lidarData_3d[PAYLOAD_LENGTH_LSB_INDEX] == response_packet_protocol_run_3d[PAYLOAD_LENGTH_LSB_INDEX] &&
+			lidarData_3d[PAYLOAD_LENGTH_MSB_INDEX] == response_packet_protocol_run_3d[PAYLOAD_LENGTH_MSB_INDEX] &&
+			lidarData_3d[PAYLOAD_HEADER] == response_packet_protocol_run_3d[PAYLOAD_HEADER])
 			{
-				payload_data_index = i;
-				printf("payload_data_index = %d", payload_data_index);
+				uint16_t distance_arr[FORMAT_3D_ARR] = {0}; // malloc
+
+				for(int i_arr=0; i_arr<FORMAT_3D_ARR/2; i_arr++){
+					uint16_t idx = PAYLOAD_HEADER + 3*i_arr;
+
+					distance_arr[2*i_arr] = 16*16*(lidarData_3d[idx]>>4) + 16*(lidarData_3d[idx] & 0x0f) + (lidarData_3d[idx+1]>>4);
+					distance_arr[2*i_arr+1] = 16*16*(lidarData_3d[idx+1] & 0x0f) + 16*(lidarData_3d[idx+2]>>4) + (lidarData_3d[idx+2] & 0x0f);
+					//	    HAL_UART_Transmit(&huart3, lidar_res_packet, sizeof(lidar_res_packet), 100);
+
+			//		printf("arr[%d]:%d\n", 2*i_arr, distance_arr[2*i_arr]);
+			//		printf("arr[%d]:%d\n", 2*i_arr+1, distance_arr[2*i_arr+1]);
+
+				}
+				// calc checksum
+				uint8_t chksum = CalcChecksum(lidarData_3d, 14407);
+
+				if(lidarData_3d[PACKET_LEN+FORMAT_3D_LEN] == chksum){ // need to add init byte num
+//					printf("!!!!!!!!!!!!!!!!!!!!!!!checksum is correct!\n");
+					success_cnt += 1;
+				}
+				else{
+//					printf("recv : %0.2x \r calc : %0.2x \n", lidarData_3d[PACKET_LEN+FORMAT_3D_LEN], chksum);
+					fail_cnt += 1;
+				}
+				printf("success percentage : %lf\n", (float)success_cnt/(success_cnt+fail_cnt)*100.0);
+				RxCpltCallback_flag == false;
+		//		return distance_arr;
 			}
 	}
-
-	uint16_t idx = 0;
-	for(int i_arr=0; i_arr<FORMAT_3D_ARR/2; i_arr++){
-		uint16_t idx = PAYLOAD_HEADER + 3*i_arr;
-
-		distance_arr[2*i_arr] = 16*16*(lidarData_3d[idx]>>4) + 16*(lidarData_3d[idx] & 0x0f) + (lidarData_3d[idx+1]>>4);
-		distance_arr[2*i_arr+1] = 16*16*(lidarData_3d[idx+1] & 0x0f) + 16*(lidarData_3d[idx+2]>>4) + (lidarData_3d[idx+2] & 0x0f);
-		//	    HAL_UART_Transmit(&huart3, lidar_res_packet, sizeof(lidar_res_packet), 100);
-
-		printf("arr[%d]:%d\n", 2*i_arr, distance_arr[2*i_arr]);
-		printf("arr[%d]:%d\n", 2*i_arr+1, distance_arr[2*i_arr+1]);
-
-	}
-		// calc checksum
-//		if(lidarData_3d[payload_data_index+FORMAT_3D_LEN] = CalcChecksum(lidarData_3d, FORMAT_3D_LEN)) // need to add init byte num
-
-	return distance_arr;
 }
-
 
 
 
