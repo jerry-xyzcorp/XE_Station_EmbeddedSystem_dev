@@ -1,0 +1,8 @@
+User_CupLidDispenser.c:33:6:SteppingMotorTest	8	static
+User_CupLidDispenser.c:55:6:pulseMaker	16	static
+User_CupLidDispenser.c:61:6:initCupLidDispensor	8	static
+User_CupLidDispenser.c:66:6:controlSteppingMotor	32	static
+User_CupLidDispenser.c:105:6:motorShutdownAll	16	static
+User_CupLidDispenser.c:112:9:getStatus_cup_lid_Dispensor	16	static
+User_CupLidDispenser.c:119:6:dispatch	16	static
+User_CupLidDispenser.c:125:6:sendCommand	24	static

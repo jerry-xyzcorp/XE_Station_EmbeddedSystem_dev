@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ice_detect Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:unitTest Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:unitTest Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XEstation_InventoryManagement Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XEstation_MachineControl Debug
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XEstation_InventoryManagement\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XEstation_InventoryManagement\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XEstation_MachineControl\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XEstation_MachineControl\ Debug/activeLaunchTarget=null\:---

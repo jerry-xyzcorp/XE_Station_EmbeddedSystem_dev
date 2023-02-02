@@ -1,0 +1,5 @@
+User_Lidar.c:33:6:init_Lidar	8	static
+User_Lidar.c:74:6:Lidar3dTest	16	static
+User_Lidar.c:92:9:CalcChecksum	24	static
+User_Lidar.c:103:6:requestPacket	32	static
+User_Lidar.c:182:9:process_lidarData_3d	19224	static

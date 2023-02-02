@@ -1,0 +1,3 @@
+User_PC_serial.c:12:6:pcTest	8	static
+User_PC_serial.c:30:6:HAL_UART_RxCpltCallback	16	static
+User_PC_serial.c:43:6:pcSerialTest	72	static
