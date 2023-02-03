@@ -1,95 +1,127 @@
-21:45:13 **** Incremental Build of configuration Debug for project XEstation_MachineControl ****
+19:01:18 **** Incremental Build of configuration Debug for project XEstation_MachineControl ****
 make -j8 all 
 arm-none-eabi-gcc "../XEstation_Library/Src/User_CupLidDispenser.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_CupLidDispenser.d" -MT"XEstation_Library/Src/User_CupLidDispenser.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_CupLidDispenser.o"
-../XEstation_Library/Src/User_CupLidDispenser.c:16:56: warning: excess elements in array initializer
-   16 | uint8_t dispenser_req_packet[][OFFSET] = {{0x02, 0x01, 0x40, 0x03, 0x44, 0X00, 0X00}, // status check
-      |                                                        ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:16:56: note: (near initialization for 'dispenser_req_packet[0]')
-../XEstation_Library/Src/User_CupLidDispenser.c:16:62: warning: excess elements in array initializer
-   16 | uint8_t dispenser_req_packet[][OFFSET] = {{0x02, 0x01, 0x40, 0x03, 0x44, 0X00, 0X00}, // status check
-      |                                                              ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:16:62: note: (near initialization for 'dispenser_req_packet[0]')
-../XEstation_Library/Src/User_CupLidDispenser.c:16:68: warning: excess elements in array initializer
-   16 | uint8_t dispenser_req_packet[][OFFSET] = {{0x02, 0x01, 0x40, 0x03, 0x44, 0X00, 0X00}, // status check
-      |                                                                    ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:16:68: note: (near initialization for 'dispenser_req_packet[0]')
-../XEstation_Library/Src/User_CupLidDispenser.c:16:74: warning: excess elements in array initializer
-   16 | uint8_t dispenser_req_packet[][OFFSET] = {{0x02, 0x01, 0x40, 0x03, 0x44, 0X00, 0X00}, // status check
-      |                                                                          ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:16:74: note: (near initialization for 'dispenser_req_packet[0]')
-../XEstation_Library/Src/User_CupLidDispenser.c:16:80: warning: excess elements in array initializer
-   16 | uint8_t dispenser_req_packet[][OFFSET] = {{0x02, 0x01, 0x40, 0x03, 0x44, 0X00, 0X00}, // status check
-      |                                                                                ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:16:80: note: (near initialization for 'dispenser_req_packet[0]')
-../XEstation_Library/Src/User_CupLidDispenser.c:17:30: warning: excess elements in array initializer
-   17 |                 {0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x49}}; // dispatch 1 cup
-      |                              ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:17:30: note: (near initialization for 'dispenser_req_packet[1]')
-../XEstation_Library/Src/User_CupLidDispenser.c:17:36: warning: excess elements in array initializer
-   17 |                 {0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x49}}; // dispatch 1 cup
-      |                                    ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:17:36: note: (near initialization for 'dispenser_req_packet[1]')
-../XEstation_Library/Src/User_CupLidDispenser.c:17:42: warning: excess elements in array initializer
-   17 |                 {0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x49}}; // dispatch 1 cup
-      |                                          ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:17:42: note: (near initialization for 'dispenser_req_packet[1]')
-../XEstation_Library/Src/User_CupLidDispenser.c:17:48: warning: excess elements in array initializer
-   17 |                 {0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x49}}; // dispatch 1 cup
-      |                                                ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:17:48: note: (near initialization for 'dispenser_req_packet[1]')
-../XEstation_Library/Src/User_CupLidDispenser.c:17:54: warning: excess elements in array initializer
-   17 |                 {0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x49}}; // dispatch 1 cup
-      |                                                      ^~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:17:54: note: (near initialization for 'dispenser_req_packet[1]')
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
                  from ../Core/Inc/main.h:31,
                  from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
                  from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:119:21: note: in expansion of macro 'GPIO_PIN_13'
+  119 | #define CupD_EN_Pin GPIO_PIN_13
+      |                     ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:31:48: note: in expansion of macro 'CupD_EN_Pin'
+   31 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
+      |                                                ^~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: note: (near initialization for 'SteppingMotor_Pin[0][0]')
+   99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:119:21: note: in expansion of macro 'GPIO_PIN_13'
+  119 | #define CupD_EN_Pin GPIO_PIN_13
+      |                     ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:31:48: note: in expansion of macro 'CupD_EN_Pin'
+   31 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
+      |                                                ^~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
    95 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
       |                                    ^
 ../Core/Inc/main.h:133:22: note: in expansion of macro 'GPIO_PIN_9'
   133 | #define CupD_STP_Pin GPIO_PIN_9
       |                      ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:20:44: note: in expansion of macro 'CupD_STP_Pin'
-   20 | uint16_t*   SteppingMotor_Pin[OFFSET] =   {CupD_STP_Pin, LidD_STP_Pin};
-      |                                            ^~~~~~~~~~~~
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: note: (near initialization for 'SteppingMotor_Pin[0]')
+../XEstation_Library/Src/User_CupLidDispenser.c:31:61: note: in expansion of macro 'CupD_STP_Pin'
+   31 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
+      |                                                             ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: note: (near initialization for 'SteppingMotor_Pin[0][1]')
    95 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
       |                                    ^
 ../Core/Inc/main.h:133:22: note: in expansion of macro 'GPIO_PIN_9'
   133 | #define CupD_STP_Pin GPIO_PIN_9
       |                      ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:20:44: note: in expansion of macro 'CupD_STP_Pin'
-   20 | uint16_t*   SteppingMotor_Pin[OFFSET] =   {CupD_STP_Pin, LidD_STP_Pin};
-      |                                            ^~~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:31:61: note: in expansion of macro 'CupD_STP_Pin'
+   31 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
+      |                                                             ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:97:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   97 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:137:22: note: in expansion of macro 'GPIO_PIN_11'
+  137 | #define CupD_DIR_Pin GPIO_PIN_11
+      |                      ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:31:75: note: in expansion of macro 'CupD_DIR_Pin'
+   31 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
+      |                                                                           ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:97:36: note: (near initialization for 'SteppingMotor_Pin[0][2]')
+   97 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:137:22: note: in expansion of macro 'GPIO_PIN_11'
+  137 | #define CupD_DIR_Pin GPIO_PIN_11
+      |                      ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:31:75: note: in expansion of macro 'CupD_DIR_Pin'
+   31 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
+      |                                                                           ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  100 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:121:21: note: in expansion of macro 'GPIO_PIN_14'
+  121 | #define LidD_EN_Pin GPIO_PIN_14
+      |                     ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:32:15: note: in expansion of macro 'LidD_EN_Pin'
+   32 |              {LidD_EN_Pin, LidD_STP_Pin, LidD_DIR_Pin}};
+      |               ^~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: note: (near initialization for 'SteppingMotor_Pin[1][0]')
+  100 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:121:21: note: in expansion of macro 'GPIO_PIN_14'
+  121 | #define LidD_EN_Pin GPIO_PIN_14
+      |                     ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:32:15: note: in expansion of macro 'LidD_EN_Pin'
+   32 |              {LidD_EN_Pin, LidD_STP_Pin, LidD_DIR_Pin}};
+      |               ^~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
    99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
       |                                    ^
 ../Core/Inc/main.h:141:22: note: in expansion of macro 'GPIO_PIN_13'
   141 | #define LidD_STP_Pin GPIO_PIN_13
       |                      ^~~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:20:58: note: in expansion of macro 'LidD_STP_Pin'
-   20 | uint16_t*   SteppingMotor_Pin[OFFSET] =   {CupD_STP_Pin, LidD_STP_Pin};
-      |                                                          ^~~~~~~~~~~~
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: note: (near initialization for 'SteppingMotor_Pin[1]')
+../XEstation_Library/Src/User_CupLidDispenser.c:32:28: note: in expansion of macro 'LidD_STP_Pin'
+   32 |              {LidD_EN_Pin, LidD_STP_Pin, LidD_DIR_Pin}};
+      |                            ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: note: (near initialization for 'SteppingMotor_Pin[1][1]')
    99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
       |                                    ^
 ../Core/Inc/main.h:141:22: note: in expansion of macro 'GPIO_PIN_13'
   141 | #define LidD_STP_Pin GPIO_PIN_13
       |                      ^~~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:20:58: note: in expansion of macro 'LidD_STP_Pin'
-   20 | uint16_t*   SteppingMotor_Pin[OFFSET] =   {CupD_STP_Pin, LidD_STP_Pin};
-      |                                                          ^~~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:32:28: note: in expansion of macro 'LidD_STP_Pin'
+   32 |              {LidD_EN_Pin, LidD_STP_Pin, LidD_DIR_Pin}};
+      |                            ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:123:22: note: in expansion of macro 'GPIO_PIN_15'
+  123 | #define LidD_DIR_Pin GPIO_PIN_15
+      |                      ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:32:42: note: in expansion of macro 'LidD_DIR_Pin'
+   32 |              {LidD_EN_Pin, LidD_STP_Pin, LidD_DIR_Pin}};
+      |                                          ^~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: note: (near initialization for 'SteppingMotor_Pin[1][2]')
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:123:22: note: in expansion of macro 'GPIO_PIN_15'
+  123 | #define LidD_DIR_Pin GPIO_PIN_15
+      |                      ^~~~~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:32:42: note: in expansion of macro 'LidD_DIR_Pin'
+   32 |              {LidD_EN_Pin, LidD_STP_Pin, LidD_DIR_Pin}};
+      |                                          ^~~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
    87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
       |                                    ^
 ../Core/Inc/main.h:115:20: note: in expansion of macro 'GPIO_PIN_1'
   115 | #define Cup_up_Pin GPIO_PIN_1
       |                    ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:24:50: note: in expansion of macro 'Cup_up_Pin'
-   24 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
+../XEstation_Library/Src/User_CupLidDispenser.c:36:50: note: in expansion of macro 'Cup_up_Pin'
+   36 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
       |                                                  ^~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: note: (near initialization for 'MotorSpeedSensor_Pin[0][0]')
    87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
@@ -97,8 +129,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:115:20: note: in expansion of macro 'GPIO_PIN_1'
   115 | #define Cup_up_Pin GPIO_PIN_1
       |                    ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:24:50: note: in expansion of macro 'Cup_up_Pin'
-   24 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
+../XEstation_Library/Src/User_CupLidDispenser.c:36:50: note: in expansion of macro 'Cup_up_Pin'
+   36 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
       |                                                  ^~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:88:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
    88 | #define GPIO_PIN_2                 ((uint16_t)0x0004)  /* Pin 2 selected    */
@@ -106,8 +138,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:97:22: note: in expansion of macro 'GPIO_PIN_2'
    97 | #define Cup_down_Pin GPIO_PIN_2
       |                      ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:24:62: note: in expansion of macro 'Cup_down_Pin'
-   24 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
+../XEstation_Library/Src/User_CupLidDispenser.c:36:62: note: in expansion of macro 'Cup_down_Pin'
+   36 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
       |                                                              ^~~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:88:36: note: (near initialization for 'MotorSpeedSensor_Pin[0][1]')
    88 | #define GPIO_PIN_2                 ((uint16_t)0x0004)  /* Pin 2 selected    */
@@ -115,8 +147,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:97:22: note: in expansion of macro 'GPIO_PIN_2'
    97 | #define Cup_down_Pin GPIO_PIN_2
       |                      ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:24:62: note: in expansion of macro 'Cup_down_Pin'
-   24 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
+../XEstation_Library/Src/User_CupLidDispenser.c:36:62: note: in expansion of macro 'Cup_down_Pin'
+   36 | uint16_t*   MotorSpeedSensor_Pin[][OFFSET] =   {{Cup_up_Pin, Cup_down_Pin},
       |                                                              ^~~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:90:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
    90 | #define GPIO_PIN_4                 ((uint16_t)0x0010)  /* Pin 4 selected    */
@@ -124,8 +156,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:79:20: note: in expansion of macro 'GPIO_PIN_4'
    79 | #define Lid_up_Pin GPIO_PIN_4
       |                    ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:25:16: note: in expansion of macro 'Lid_up_Pin'
-   25 |               {Lid_up_Pin, Lid_down_Pin}};
+../XEstation_Library/Src/User_CupLidDispenser.c:37:16: note: in expansion of macro 'Lid_up_Pin'
+   37 |               {Lid_up_Pin, Lid_down_Pin}};
       |                ^~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:90:36: note: (near initialization for 'MotorSpeedSensor_Pin[1][0]')
    90 | #define GPIO_PIN_4                 ((uint16_t)0x0010)  /* Pin 4 selected    */
@@ -133,8 +165,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:79:20: note: in expansion of macro 'GPIO_PIN_4'
    79 | #define Lid_up_Pin GPIO_PIN_4
       |                    ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:25:16: note: in expansion of macro 'Lid_up_Pin'
-   25 |               {Lid_up_Pin, Lid_down_Pin}};
+../XEstation_Library/Src/User_CupLidDispenser.c:37:16: note: in expansion of macro 'Lid_up_Pin'
+   37 |               {Lid_up_Pin, Lid_down_Pin}};
       |                ^~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
    92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
@@ -142,8 +174,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:201:22: note: in expansion of macro 'GPIO_PIN_6'
   201 | #define Lid_down_Pin GPIO_PIN_6
       |                      ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:25:28: note: in expansion of macro 'Lid_down_Pin'
-   25 |               {Lid_up_Pin, Lid_down_Pin}};
+../XEstation_Library/Src/User_CupLidDispenser.c:37:28: note: in expansion of macro 'Lid_down_Pin'
+   37 |               {Lid_up_Pin, Lid_down_Pin}};
       |                            ^~~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: note: (near initialization for 'MotorSpeedSensor_Pin[1][1]')
    92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
@@ -151,54 +183,62 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Core/Inc/main.h:201:22: note: in expansion of macro 'GPIO_PIN_6'
   201 | #define Lid_down_Pin GPIO_PIN_6
       |                      ^~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:25:28: note: in expansion of macro 'Lid_down_Pin'
-   25 |               {Lid_up_Pin, Lid_down_Pin}};
+../XEstation_Library/Src/User_CupLidDispenser.c:37:28: note: in expansion of macro 'Lid_down_Pin'
+   37 |               {Lid_up_Pin, Lid_down_Pin}};
       |                            ^~~~~~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c: In function 'SteppingMotorTest':
-../XEstation_Library/Src/User_CupLidDispenser.c:37:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   37 |  printf("ROTATE start!!\n");
-      |  ^~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:37:2: warning: incompatible implicit declaration of built-in function 'printf'
+../XEstation_Library/Src/User_CupLidDispenser.c: In function 'controlSteppingMotor':
+../XEstation_Library/Src/User_CupLidDispenser.c:93:75: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   93 |   HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][EN], SteppingMotor_Pin[ID][EN], GPIO_PIN_SET);
+      |                                                      ~~~~~~~~~~~~~~~~~~~~~^~~~
+      |                                                                           |
+      |                                                                           uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
+                 from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:107:77: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  107 |    HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][STP], SteppingMotor_Pin[ID][STP], GPIO_PIN_SET);
+      |                                                        ~~~~~~~~~~~~~~~~~~~~~^~~~~
+      |                                                                             |
+      |                                                                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
+                 from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:109:77: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  109 |    HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][STP], SteppingMotor_Pin[ID][STP], GPIO_PIN_RESET);
+      |                                                        ~~~~~~~~~~~~~~~~~~~~~^~~~~
+      |                                                                             |
+      |                                                                             uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
+                 from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:112:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  112 |   printf("detection mode on!\n");
+      |   ^~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:112:3: warning: incompatible implicit declaration of built-in function 'printf'
 ../XEstation_Library/Src/User_CupLidDispenser.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
     7 | #include "User_CupLidDispenser.h"
   +++ |+#include <stdio.h>
     8 | 
-../XEstation_Library/Src/User_CupLidDispenser.c:44:114: warning: passing argument 2 of 'HAL_GPIO_ReadPin' makes integer from pointer without a cast [-Wint-conversion]
-   44 |  printf("ROTATE finished!!\n\n %d \n",HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[0][UP], MotorSpeedSensor_Pin[0][UP]));
-      |                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~^~~~
-      |                                                                                                                  |
-      |                                                                                                                  uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
-                 from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:62: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
-  235 | GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-      |                                                     ~~~~~~~~~^~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c: In function 'controlSteppingMotor':
-../XEstation_Library/Src/User_CupLidDispenser.c:76:4: warning: incompatible implicit declaration of built-in function 'printf'
-   76 |    printf("%d \n",HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[0][UP], MotorSpeedSensor_Pin[0][UP]));
-      |    ^~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:76:4: note: include '<stdio.h>' or provide a declaration of 'printf'
-../XEstation_Library/Src/User_CupLidDispenser.c:76:94: warning: passing argument 2 of 'HAL_GPIO_ReadPin' makes integer from pointer without a cast [-Wint-conversion]
-   76 |    printf("%d \n",HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[0][UP], MotorSpeedSensor_Pin[0][UP]));
-      |                                                                       ~~~~~~~~~~~~~~~~~~~~~~~^~~~
-      |                                                                                              |
-      |                                                                                              uint16_t * {aka short unsigned int *}
-In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
-                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
-                 from ../Core/Inc/main.h:31,
-                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
-                 from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
-../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:62: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
-  235 | GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-      |                                                     ~~~~~~~~~^~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:78:68: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
-   78 |    HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID], SteppingMotor_Pin[ID], GPIO_PIN_SET);
-      |                                                   ~~~~~~~~~~~~~~~~~^~~~
-      |                                                                    |
-      |                                                                    uint16_t * {aka short unsigned int *}
+../XEstation_Library/Src/User_CupLidDispenser.c:114:77: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  114 |    HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][STP], SteppingMotor_Pin[ID][STP], GPIO_PIN_SET);
+      |                                                        ~~~~~~~~~~~~~~~~~~~~~^~~~~
+      |                                                                             |
+      |                                                                             uint16_t * {aka short unsigned int *}
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
                  from ../Core/Inc/main.h:31,
@@ -207,11 +247,11 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
   236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
       |                                             ~~~~~~~~~^~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:80:68: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
-   80 |    HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID], SteppingMotor_Pin[ID], GPIO_PIN_RESET);
-      |                                                   ~~~~~~~~~~~~~~~~~^~~~
-      |                                                                    |
-      |                                                                    uint16_t * {aka short unsigned int *}
+../XEstation_Library/Src/User_CupLidDispenser.c:116:77: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  116 |    HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][STP], SteppingMotor_Pin[ID][STP], GPIO_PIN_RESET);
+      |                                                        ~~~~~~~~~~~~~~~~~~~~~^~~~~
+      |                                                                             |
+      |                                                                             uint16_t * {aka short unsigned int *}
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
                  from ../Core/Inc/main.h:31,
@@ -220,8 +260,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
   236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
       |                                             ~~~~~~~~~^~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:84:85: warning: passing argument 2 of 'HAL_GPIO_ReadPin' makes integer from pointer without a cast [-Wint-conversion]
-   84 |     if(HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[ID][UP], MotorSpeedSensor_Pin[ID][UP]) != GPIO_PIN_SET){
+../XEstation_Library/Src/User_CupLidDispenser.c:120:85: warning: passing argument 2 of 'HAL_GPIO_ReadPin' makes integer from pointer without a cast [-Wint-conversion]
+  120 |     if(HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[ID][UP], MotorSpeedSensor_Pin[ID][UP]) & (is_detected[ID][DOWN] == true)){
       |                                                             ~~~~~~~~~~~~~~~~~~~~~~~~^~~~
       |                                                                                     |
       |                                                                                     uint16_t * {aka short unsigned int *}
@@ -233,8 +273,8 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:62: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
   235 | GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
       |                                                     ~~~~~~~~~^~~~~~~~
-../XEstation_Library/Src/User_CupLidDispenser.c:91:87: warning: passing argument 2 of 'HAL_GPIO_ReadPin' makes integer from pointer without a cast [-Wint-conversion]
-   91 |     if(HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[ID][DOWN], MotorSpeedSensor_Pin[ID][DOWN]) != GPIO_PIN_SET){
+../XEstation_Library/Src/User_CupLidDispenser.c:127:87: warning: passing argument 2 of 'HAL_GPIO_ReadPin' makes integer from pointer without a cast [-Wint-conversion]
+  127 |     if(HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[ID][DOWN], MotorSpeedSensor_Pin[ID][DOWN])){
       |                                                               ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
       |                                                                                       |
       |                                                                                       uint16_t * {aka short unsigned int *}
@@ -246,9 +286,22 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:62: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
   235 | GPIO_PinState HAL_GPIO_ReadPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
       |                                                     ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_CupLidDispenser.c:135:74: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  135 |  HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][EN], SteppingMotor_Pin[ID][EN], GPIO_PIN_RESET); //EN - RESET = disable MOTOR
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~^~~~
+      |                                                                          |
+      |                                                                          uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:11,
+                 from ../XEstation_Library/Src/User_CupLidDispenser.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
 ../XEstation_Library/Src/User_CupLidDispenser.c: In function 'getStatus_cup_lid_Dispensor':
-../XEstation_Library/Src/User_CupLidDispenser.c:118:1: warning: control reaches end of non-void function [-Wreturn-type]
-  118 | }
+../XEstation_Library/Src/User_CupLidDispenser.c:153:1: warning: control reaches end of non-void function [-Wreturn-type]
+  153 | }
       | ^
 arm-none-eabi-gcc -o "XEstation_MachineControl.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ethan\Documents\stm32\XE_Station_EmbeddedSystem\XEstation_MachineControl\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_MachineControl.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: XEstation_MachineControl.elf
@@ -256,14 +309,14 @@ Finished building target: XEstation_MachineControl.elf
 arm-none-eabi-size   XEstation_MachineControl.elf 
 arm-none-eabi-objdump -h -S  XEstation_MachineControl.elf  > "XEstation_MachineControl.list"
    text	   data	    bss	    dec	    hex	filename
-  21136	    552	   2096	  23784	   5ce8	XEstation_MachineControl.elf
+  19044	    428	   2100	  21572	   5444	XEstation_MachineControl.elf
 arm-none-eabi-objcopy  -O binary  XEstation_MachineControl.elf  "XEstation_MachineControl.bin"
 Finished building: default.size.stdout
-Finished building: XEstation_MachineControl.list
  
+Finished building: XEstation_MachineControl.list
 Finished building: XEstation_MachineControl.bin
  
  
 
-21:45:18 Build Finished. 0 errors, 26 warnings. (took 4s.480ms)
+19:01:20 Build Finished. 0 errors, 21 warnings. (took 2s.460ms)
 

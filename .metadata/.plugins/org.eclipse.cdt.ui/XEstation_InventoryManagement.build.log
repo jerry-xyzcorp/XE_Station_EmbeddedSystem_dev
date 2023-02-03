@@ -1,47 +1,10 @@
-19:54:49 **** Incremental Build of configuration Debug for project XEstation_InventoryManagement ****
+11:47:26 **** Incremental Build of configuration Debug for project XEstation_InventoryManagement ****
 make -j8 all 
-arm-none-eabi-gcc "../XEstation_Library/Src/User_hx711.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_hx711.d" -MT"XEstation_Library/Src/User_hx711.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_hx711.o"
-../XEstation_Library/Src/User_hx711.c: In function 'initHx711':
-../XEstation_Library/Src/User_hx711.c:13:8: warning: unused variable 'weight' [-Wunused-variable]
-   13 |  float weight;
-      |        ^~~~~~
-../XEstation_Library/Src/User_hx711.c:12:21: warning: unused variable 'loadcellB' [-Wunused-variable]
-   12 |  hx711_t loadcellA, loadcellB;
-      |                     ^~~~~~~~~
-../XEstation_Library/Src/User_hx711.c: In function 'hx711Test':
-../XEstation_Library/Src/User_hx711.c:37:6: warning: unused variable 'offsetB' [-Wunused-variable]
-   37 |  int offsetB = 21325-14202-7119;
-      |      ^~~~~~~
-../XEstation_Library/Src/User_hx711.c:36:6: warning: unused variable 'offsetA' [-Wunused-variable]
-   36 |  int offsetA = -4597;
-      |      ^~~~~~~
-../XEstation_Library/Src/User_hx711.c:34:8: warning: unused variable 'weight' [-Wunused-variable]
-   34 |  float weight;
-      |        ^~~~~~
-../XEstation_Library/Src/User_hx711.c:33:21: warning: unused variable 'loadcellB' [-Wunused-variable]
-   33 |  hx711_t loadcellA, loadcellB;
-      |                     ^~~~~~~~~
-../XEstation_Library/Src/User_hx711.c: In function 'get_data':
-../XEstation_Library/Src/User_hx711.c:51:21: warning: unused variable 'loadcellB' [-Wunused-variable]
-   51 |  hx711_t loadcellA, loadcellB;
-      |                     ^~~~~~~~~
-../XEstation_Library/Src/User_hx711.c:51:10: warning: unused variable 'loadcellA' [-Wunused-variable]
-   51 |  hx711_t loadcellA, loadcellB;
-      |          ^~~~~~~~~
-arm-none-eabi-gcc -o "XEstation_InventoryManagement.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ethan\Documents\stm32\XE_Station_EmbeddedSystem\XEstation_InventoryManagement\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_InventoryManagement.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: XEstation_InventoryManagement.elf
- 
 arm-none-eabi-size   XEstation_InventoryManagement.elf 
-arm-none-eabi-objdump -h -S  XEstation_InventoryManagement.elf  > "XEstation_InventoryManagement.list"
    text	   data	    bss	    dec	    hex	filename
   32724	    484	   2316	  35524	   8ac4	XEstation_InventoryManagement.elf
-arm-none-eabi-objcopy  -O binary  XEstation_InventoryManagement.elf  "XEstation_InventoryManagement.bin"
 Finished building: default.size.stdout
  
-Finished building: XEstation_InventoryManagement.list
-Finished building: XEstation_InventoryManagement.bin
- 
- 
 
-19:54:57 Build Finished. 0 errors, 8 warnings. (took 7s.932ms)
+11:47:27 Build Finished. 0 errors, 0 warnings. (took 515ms)
 
