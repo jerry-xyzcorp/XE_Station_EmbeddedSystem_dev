@@ -21,6 +21,11 @@
 
 #define STATUS_CHECK 	0
 #define DISPATCH_1_CUP 	1
+#define IS_FINISHED 	2
+#define IS_CUP_EXITED	6
+#define RES_PACKET_BCC	10
+#define CUP_EXITED		0x10
+#define CUP_EXITING		0x01
 
 #define STEPPING_MOTOR_OFF	false
 #define STEPPING_MOTOR_ON	true

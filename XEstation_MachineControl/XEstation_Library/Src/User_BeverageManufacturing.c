@@ -146,9 +146,21 @@ uint8_t getStatus_powderMachine(void)
 
 }
 
-bool make_Beverage(uint8_t num_hole, uint16_t gram)
+bool make_Beverage(uint16_t* hot_water_gram, uint16_t* powder_gram)
 {
+	// 1. heater on
+	for(uint8_t i=0; i<HEATER_NUM; i++){
+		if(hot_water_gram[i] != 0){
 
+		}
+	}
+
+	// 2, exit powder
+	for(uint8_t i=0; i<POWDER_NUM; i++){
+		if(powder_gram[i] != 0){
+
+		}
+	}
 }
 
 //////////////////////////////// FOR TEST ///////////////////////////

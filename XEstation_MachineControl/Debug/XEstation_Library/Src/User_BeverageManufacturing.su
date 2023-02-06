@@ -2,6 +2,6 @@ User_BeverageManufacturing.c:52:6:init_powderMachine	16	static
 User_BeverageManufacturing.c:92:6:MalchaTest	24	static
 User_BeverageManufacturing.c:124:6:motorShutdownAll_powderMachine	16	static
 User_BeverageManufacturing.c:144:9:getStatus_powderMachine	4	static
-User_BeverageManufacturing.c:149:6:make_Beverage	16	static
-User_BeverageManufacturing.c:155:6:heaterTest	16	static
-User_BeverageManufacturing.c:170:6:L298Ntest	8	static
+User_BeverageManufacturing.c:149:6:make_Beverage	24	static
+User_BeverageManufacturing.c:167:6:heaterTest	16	static
+User_BeverageManufacturing.c:182:6:L298Ntest	8	static

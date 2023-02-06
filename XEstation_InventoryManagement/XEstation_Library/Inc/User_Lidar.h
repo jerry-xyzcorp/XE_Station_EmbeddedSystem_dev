@@ -7,24 +7,24 @@
 #include "main.h"
 
 // Lidar mode setting
-#define GET_DEVICE_INFO 0
-#define RUN_2D_MODE	 1
-#define RUN_3D_MODE	 2
-#define RUN_DUAL_MODE 3
-#define STOP 4
-#define SET_3D_PULSE_DURATION_REQUEST 5
-#define SET_FREQ_REQUEST 6
-#define SET_SENSITIVITY_REQUEST 7
-#define SET_BAUDRATE 8
+#define GET_DEVICE_INFO 				0
+#define RUN_2D_MODE	 					1
+#define RUN_3D_MODE	 					2
+#define RUN_DUAL_MODE 					3
+#define STOP 							4
+#define SET_3D_PULSE_DURATION_REQUEST 	5
+#define SET_FREQ_REQUEST 				6
+#define SET_SENSITIVITY_REQUEST 		7
+#define SET_BAUDRATE 					8
 
 // Packet structure
-#define PACKET_HEADER_1	 		0
-#define PACKET_HEADER_2	 		1
-#define PACKET_HEADER_3	 		2
-#define PAYLOAD_LENGTH_LSB_INDEX 3
-#define PAYLOAD_LENGTH_MSB_INDEX 4
-#define PAYLOAD_HEADER			 5
-#define PACKET_LEN				 6
+#define PACKET_HEADER_1	 			0
+#define PACKET_HEADER_2	 			1
+#define PACKET_HEADER_3	 			2
+#define PAYLOAD_LENGTH_LSB_INDEX 	3
+#define PAYLOAD_LENGTH_MSB_INDEX 	4
+#define PAYLOAD_HEADER			 	5
+#define PACKET_LEN				 	6
 
 #define FORMAT_CHECKSUM_LEN		1
 #define FORMAT_3D_LEN			14400

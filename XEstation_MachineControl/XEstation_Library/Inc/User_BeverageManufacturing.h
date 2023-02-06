@@ -17,13 +17,23 @@
 #define HEATER_MOTOR_STOP 0
 #define HEATER_MOTOR_MAX  65534
 
+#define POWDER_MILK 	0
+#define POWDER_MALCHA 	1
+#define POWDER_MILKTEA	2
+#define POWDER_ICETEA	3
+#define POWDER_CHOCO	4
+#define POWDER_NUM		5
+#define HEATER_NUM		6
+#define HEATER_COFFEE	5
+
+#define WATER_EXIT_TIME(hot_water_amout) (int)(((hot_water_amout/1000.0-0.45)/21.1)*1000)
 //#define HEATER_MOTOR_SPEED_10 int(65535*0.1) // macro func.!!
 
 // powder machine
 void init_powderMachine(void);
 bool motorShutdownAll_powderMachine(void);
 uint8_t getStatus_powderMachine(void);
-bool make_Beverage(uint8_t num_hole, uint16_t gram);
+bool make_Beverage(uint16_t* hot_water_gram, uint16_t* powder_gram);
 
 // water heater
 void init_waterHeater(void);

@@ -13,8 +13,8 @@ extern UART_HandleTypeDef huart5; // cup dispenser
 extern UART_HandleTypeDef huart6; // lid dispenser
 
 extern uint8_t pc_res_packet[10];
-extern uint8_t cupD_res_packet[9];
-extern uint8_t LidD_res_packet[9];
+extern uint8_t cupD_res_packet[11];
+extern uint8_t LidD_res_packet[11];
 
 
 uint8_t dispenser_req_packet_list[][7] =
@@ -23,8 +23,6 @@ uint8_t dispenser_req_packet_list[][7] =
 				{0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x00},		// extract 1 cup
 				{0x02, 0x02, 0x42, 0x00, 0x03, 0x00, 0x00}		// finished
 		};
-
-//uint8_t dispenser_req_packet[][OFFSET] = {{0x02, 0x01, 0x40, 0x03, 0x44, 0X00, 0X00}, // status check
 
 GPIO_TypeDef* 	SteppingMotor_GPIO_Port[OFFSET][3] = 	{{CupD_EN_GPIO_Port, CupD_STP_GPIO_Port, CupD_DIR_GPIO_Port},
 													{LidD_EN_GPIO_Port, LidD_STP_GPIO_Port, LidD_DIR_GPIO_Port}};
@@ -52,12 +50,30 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	else if (huart->Instance == UART5)
 	{
 		HAL_UART_Transmit(&huart3, cupD_res_packet, sizeof(cupD_res_packet), 100);
+
+		// calc checksum
+		int chksum = 0x00;
+		for(int i=1; i<RES_PACKET_BCC; i++){
+			chksum += cupD_res_packet[i];
+		}
+		if (cupD_res_packet[RES_PACKET_BCC] == chksum)
+			printf("check sus error!");
+
 //	    HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
 	}
 	else if (huart->Instance == USART6)
 	{
 		HAL_UART_Transmit(&huart3, LidD_res_packet, sizeof(LidD_res_packet), 100);
-	    HAL_UART_Receive_IT(&huart6, LidD_res_packet, sizeof(LidD_res_packet));
+
+		// calc checksum
+		int chksum = 0x00;
+		for(int i=1; i<RES_PACKET_BCC; i++){
+			chksum += LidD_res_packet[i];
+		}
+		if (LidD_res_packet[RES_PACKET_BCC] == chksum)
+			printf("check sus error!");
+
+//	    HAL_UART_Receive_IT(&huart6, LidD_res_packet, sizeof(LidD_res_packet));
 	}
 }
 
@@ -93,15 +109,15 @@ void controlSteppingMotor(uint8_t device_id, bool cmd, uint8_t dir, uint16_t ang
 		HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][EN], SteppingMotor_Pin[ID][EN], GPIO_PIN_SET);
 
 		// DIR : Sset motor direction
-//		if(dir == CLOCKWISE)
-//			HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][DIR], SteppingMotor_Pin[ID][DIR], GPIO_PIN_RESET);
-//		else if(dir == COUNTER_CLOCKWISE)
-//			HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][DIR], SteppingMotor_Pin[ID][DIR], GPIO_PIN_SET);
+		if(dir == CLOCKWISE)
+			HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][DIR], SteppingMotor_Pin[ID][DIR], GPIO_PIN_RESET);
+		else if(dir == COUNTER_CLOCKWISE)
+			HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][DIR], SteppingMotor_Pin[ID][DIR], GPIO_PIN_SET);
 
 		is_running[ID] = true;
 		HAL_Delay(10);
 
-		for(uint16_t step=0; step < angle/5; step++){
+		for(uint16_t step=0; step < angle/10; step++){
 //			printf("%d \n",HAL_GPIO_ReadPin(MotorSpeedSensor_GPIO_Port[0][UP], MotorSpeedSensor_Pin[0][UP]));
 
 			HAL_GPIO_WritePin(SteppingMotor_GPIO_Port[ID][STP], SteppingMotor_Pin[ID][STP], GPIO_PIN_SET);
@@ -154,28 +170,32 @@ uint8_t getStatus_cup_lid_Dispensor(void)
 bool dispatch(uint8_t device_id)
 {
 	HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
-//	sendCommand(device_id, STATUS_CHECK);
 	sendCommand(device_id, DISPATCH_1_CUP);
+
+	while(1)
+	{
+		HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
+		sendCommand(device_id, STATUS_CHECK);
+		if(cupD_res_packet[IS_CUP_EXITED] == CUP_EXITED)
+			break;
+	}
+
+//	sendCommand(device_id, IS_FINISHED);
 	return true;
 }
+
 
 void sendCommand(uint8_t device_id, uint8_t cmd)
 {
 	// calc checksum
-	int chk_size = dispenser_req_packet_list[cmd][LEN]+3;
-	for(int i=1; i<chk_size; i++){
-		dispenser_req_packet_list[cmd][chk_size] += dispenser_req_packet_list[cmd][i];
+	int BCC = dispenser_req_packet_list[cmd][LEN]+3;
+
+	for(int i=1; i<BCC; i++){
+		dispenser_req_packet_list[cmd][BCC] += dispenser_req_packet_list[cmd][i];
 	}
 
-//	for(int i=0; i<sizeof(dispenser_req_packet_list[cmd]); i++){
-//		printf("%0.2x\r ", dispenser_req_packet_list[cmd][i]);
-//	}
-//	printf("finished!\n");
-	uint8_t dispenser_req_packet[] = {0x02, 0x03, 0x41, 0x01, 0x01, 0x03, 0x49}; // extract 1 cup
-	HAL_UART_Transmit(&huart5, (uint8_t *)dispenser_req_packet, sizeof(dispenser_req_packet), 100);
-
 	// request packet
-//	HAL_UART_Transmit(&huart5, (uint8_t *)dispenser_req_packet_list[cmd], sizeof(dispenser_req_packet_list[cmd]), 100);
+	HAL_UART_Transmit(&huart5, (uint8_t *)dispenser_req_packet_list[cmd], sizeof(dispenser_req_packet_list[cmd]), 100);
 
 	// for debug
 	HAL_UART_Transmit(&huart3, (uint8_t *)dispenser_req_packet_list[cmd], sizeof(dispenser_req_packet_list[cmd]), 100);
