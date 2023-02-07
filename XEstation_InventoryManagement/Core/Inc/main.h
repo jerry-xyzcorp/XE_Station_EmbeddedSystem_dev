@@ -68,8 +68,12 @@ int _write(int file, char *ptr, int len);
 #define PD02_dout_GPIO_Port GPIOF
 #define PD01_sck_Pin GPIO_PIN_2
 #define PD01_sck_GPIO_Port GPIOC
+#define SYR01_dout_Pin GPIO_PIN_0
+#define SYR01_dout_GPIO_Port GPIOA
 #define CP01_echo_Pin GPIO_PIN_7
 #define CP01_echo_GPIO_Port GPIOA
+#define SYR02_dout_Pin GPIO_PIN_0
+#define SYR02_dout_GPIO_Port GPIOB
 #define PD01_dout_Pin GPIO_PIN_1
 #define PD01_dout_GPIO_Port GPIOB
 #define PD03_dout_Pin GPIO_PIN_2
@@ -98,6 +102,8 @@ int _write(int file, char *ptr, int len);
 #define LD01_TIM_GPIO_Port GPIOE
 #define EXIC01_sck_Pin GPIO_PIN_14
 #define EXIC01_sck_GPIO_Port GPIOE
+#define SYR01_sck_Pin GPIO_PIN_15
+#define SYR01_sck_GPIO_Port GPIOE
 #define Lid_SCL_Pin GPIO_PIN_10
 #define Lid_SCL_GPIO_Port GPIOB
 #define Lid_SDA_Pin GPIO_PIN_11
@@ -130,6 +136,8 @@ int _write(int file, char *ptr, int len);
 #define Cup_Bakery_SCL_GPIO_Port GPIOB
 #define Cup_Bakery_SDA_Pin GPIO_PIN_9
 #define Cup_Bakery_SDA_GPIO_Port GPIOB
+#define SYR02_sck_Pin GPIO_PIN_0
+#define SYR02_sck_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

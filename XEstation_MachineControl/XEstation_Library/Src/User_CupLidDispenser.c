@@ -82,11 +82,13 @@ void SteppingMotorTest(void)
 	// 90 degree rotation test
 //	printf("ROTATE start!!\n");
 //	controlSteppingMotor(CUP_D, STEPPING_MOTOR_ON, CLOCKWISE, QUARTER, FREQ_FAST);
-//	controlSteppingMotor(LID_D, STEPPING_MOTOR_ON, CLOCKWISE, QUARTER, FREQ_FAST);
+	controlSteppingMotor(LID_D, STEPPING_MOTOR_ON, CLOCKWISE, QUARTER, FREQ_FAST);
 //	printf("ROTATE finished!!\n\n");
 
 	HAL_Delay(1000);
-	dispatch(CUP_D);
+//	dispatch(CUP_D);
+	dispatch(LID_D);
+
 }
 
 void pulseMaker (uint16_t time)	//delay function in 10us
@@ -169,16 +171,17 @@ uint8_t getStatus_cup_lid_Dispensor(void)
 }
 bool dispatch(uint8_t device_id)
 {
-	HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
+	HAL_UART_Receive_IT(&huart6, cupD_res_packet, sizeof(cupD_res_packet));
 	sendCommand(device_id, DISPATCH_1_CUP);
-
-	while(1)
-	{
-		HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
-		sendCommand(device_id, STATUS_CHECK);
-		if(cupD_res_packet[IS_CUP_EXITED] == CUP_EXITED)
-			break;
-	}
+//	sendCommand(device_id, STATUS_CHECK);
+//
+//	while(1)
+//	{
+//		HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
+//		sendCommand(device_id, STATUS_CHECK);
+//		if(cupD_res_packet[IS_CUP_EXITED] == CUP_EXITED)
+//			break;
+//	}
 
 //	sendCommand(device_id, IS_FINISHED);
 	return true;
@@ -195,7 +198,7 @@ void sendCommand(uint8_t device_id, uint8_t cmd)
 	}
 
 	// request packet
-	HAL_UART_Transmit(&huart5, (uint8_t *)dispenser_req_packet_list[cmd], sizeof(dispenser_req_packet_list[cmd]), 100);
+	HAL_UART_Transmit(&huart6, (uint8_t *)dispenser_req_packet_list[cmd], sizeof(dispenser_req_packet_list[cmd]), 100);
 
 	// for debug
 	HAL_UART_Transmit(&huart3, (uint8_t *)dispenser_req_packet_list[cmd], sizeof(dispenser_req_packet_list[cmd]), 100);

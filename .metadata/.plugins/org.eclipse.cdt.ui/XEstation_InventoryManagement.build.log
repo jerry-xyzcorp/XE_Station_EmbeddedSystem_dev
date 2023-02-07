@@ -1,61 +1,29 @@
-21:41:21 **** Incremental Build of configuration Debug for project XEstation_InventoryManagement ****
+20:58:38 **** Incremental Build of configuration Debug for project XEstation_InventoryManagement ****
 make -j8 all 
-arm-none-eabi-gcc "../XEstation_Library/Src/hx711.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/hx711.d" -MT"XEstation_Library/Src/hx711.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/hx711.o"
-../XEstation_Library/Src/hx711.c: In function 'hx711_init':
-../XEstation_Library/Src/hx711.c:68:30: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'GPIO_TypeDef *' {aka 'struct <anonymous> *'} [-Wformat=]
-   68 |   printf("hx711->clk_gpio : %x\n", hx711->clk_gpio);
-      |                             ~^     ~~~~~~~~~~~~~~~
-      |                              |          |
-      |                              |          GPIO_TypeDef * {aka struct <anonymous> *}
-      |                              unsigned int
-../XEstation_Library/Src/hx711.c:69:18: warning: assignment to 'uint16_t' {aka 'short unsigned int'} from 'void *' makes integer from pointer without a cast [-Wint-conversion]
-   69 |   hx711->clk_pin = NULL;
-      |                  ^
-../XEstation_Library/Src/hx711.c:95:30: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'GPIO_TypeDef *' {aka 'struct <anonymous> *'} [-Wformat=]
-   95 |   printf("hx711->clk_gpio : %x\n", hx711->clk_gpio);
-      |                             ~^     ~~~~~~~~~~~~~~~
-      |                              |          |
-      |                              |          GPIO_TypeDef * {aka struct <anonymous> *}
-      |                              unsigned int
-../XEstation_Library/Src/hx711.c:97:31: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'GPIO_TypeDef' {aka 'struct <anonymous>'} [-Wformat=]
-   97 |   printf("*hx711->clk_gpio : %x\n", *(GPIO_TypeDef *)hx711->clk_gpio);
-      |                              ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                               |     |
-      |                               |     GPIO_TypeDef {aka struct <anonymous>}
-      |                               unsigned int
-../XEstation_Library/Src/hx711.c:98:36: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
-   98 |   printf("*hx711->clk_pin : %x\n", (uint16_t*)hx711->clk_pin);
-      |                                    ^
-../XEstation_Library/Src/hx711.c:98:30: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint16_t *' {aka 'short unsigned int *'} [-Wformat=]
-   98 |   printf("*hx711->clk_pin : %x\n", (uint16_t*)hx711->clk_pin);
-      |                             ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                              |     |
-      |                              |     uint16_t * {aka short unsigned int *}
-      |                              unsigned int
-      |                             %hn
-../XEstation_Library/Src/hx711.c:60:11: warning: unused variable 'dat_pin' [-Wunused-variable]
-   60 |  uint16_t dat_pin = HX711_Pin[hx711_idx][DOUT];
-      |           ^~~~~~~
-../XEstation_Library/Src/hx711.c:59:16: warning: unused variable 'dat_gpio' [-Wunused-variable]
-   59 |  GPIO_TypeDef* dat_gpio = HX711_GPIO_Port[hx711_idx][DOUT];
-      |                ^~~~~~~~
-../XEstation_Library/Src/hx711.c:57:16: warning: unused variable 'clk_gpio' [-Wunused-variable]
-   57 |  GPIO_TypeDef* clk_gpio = HX711_GPIO_Port[hx711_idx][SCK];
-      |                ^~~~~~~~
+arm-none-eabi-gcc "../XEstation_Library/Src/User_hx711.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_hx711.d" -MT"XEstation_Library/Src/User_hx711.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_hx711.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../XEstation_Library/Src/User_hx711.c: In function 'set_threash':
+../XEstation_Library/Src/User_hx711.c:86:41: warning: 'data' is used uninitialized in this function [-Wuninitialized]
+   86 |  hx711_cali_factor[sensor_id][ZERO_VAL] = data;
+      |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:230:4: warning: implicit declaration of function 'runHx711' [-Wimplicit-function-declaration]
+  230 |    runHx711(6);
+      |    ^~~~~~~~
 arm-none-eabi-gcc -o "XEstation_InventoryManagement.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ethan\Documents\stm32\XE_Station_EmbeddedSystem\XEstation_InventoryManagement\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_InventoryManagement.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: XEstation_InventoryManagement.elf
  
 arm-none-eabi-size   XEstation_InventoryManagement.elf 
 arm-none-eabi-objdump -h -S  XEstation_InventoryManagement.elf  > "XEstation_InventoryManagement.list"
    text	   data	    bss	    dec	    hex	filename
-  33988	    540	   2316	  36844	   8fec	XEstation_InventoryManagement.elf
+  40328	    704	  19600	  60632	   ecd8	XEstation_InventoryManagement.elf
 arm-none-eabi-objcopy  -O binary  XEstation_InventoryManagement.elf  "XEstation_InventoryManagement.bin"
 Finished building: default.size.stdout
  
-Finished building: XEstation_InventoryManagement.list
 Finished building: XEstation_InventoryManagement.bin
+Finished building: XEstation_InventoryManagement.list
  
  
 
-21:41:24 Build Finished. 0 errors, 9 warnings. (took 2s.738ms)
+20:58:44 Build Finished. 0 errors, 2 warnings. (took 5s.903ms)
 

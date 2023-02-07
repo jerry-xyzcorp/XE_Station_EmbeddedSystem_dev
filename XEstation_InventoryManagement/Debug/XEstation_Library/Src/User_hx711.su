@@ -1,4 +1,4 @@
-User_hx711.c:33:6:initHx711	104	static
-User_hx711.c:122:6:hx711Test	64	static
-User_hx711.c:140:9:get_data	64	static
-User_hx711.c:147:9:set_threash	16	static
+User_hx711.c:44:6:initHx711	32	static
+User_hx711.c:63:6:runHx711	40	static
+User_hx711.c:76:9:get_data	16	static
+User_hx711.c:82:9:set_threash	24	static

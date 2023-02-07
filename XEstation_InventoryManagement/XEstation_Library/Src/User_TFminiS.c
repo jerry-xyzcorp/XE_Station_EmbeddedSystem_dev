@@ -14,6 +14,19 @@
 #define OBTAIN_DATA_CM			6
 #define OBTAIN_DATA_MM			7
 
+
+uint8_t TFminiS_req_packet_list[][5] =
+				{
+						{0x5a, 0x04, 0x01, 0x5f, 0x00},// Obtain firmware version
+						{0x5a, 0x05, 0x0a, 0x01, 0x00},// I2C setting - Communication interface
+						{0x5a, 0x04, 0x11, 0x6f, 0x00},// save settings
+						{0x5a, 0x04, 0x02, 0x60, 0x00},// system reset
+						{0x5a, 0x05, 0x05, 0x01, 0x65},// set Output format: standard 9 bytes(cm)
+						{0x5a, 0x05, 0x05, 0x06, 0x6a},// set Output format: standard 9 bytes(mm)
+						{0x5a, 0x05, 0x00, 0x01, 0x60},// obtain data frame(9bytes-cm)
+						{0x5a, 0x05, 0x00, 0x06, 0x65},// obtain data frame(9bytes-mm)
+				};
+
 void initTFminiS(void)
 {
 	is_running = false;
@@ -45,17 +58,7 @@ bool set_thresh(uint8_t sensor_id, uint16_t threashold)
 uint8_t* initPacket(uint8_t mode)
 {
 	// packet order : [header] [len] ... [checksum]
-	uint8_t TFminiS_req_packet_list[][5] =
-			{
-					{0x5a, 0x04, 0x01, 0x5f, 0x00},// Obtain firmware version
-					{0x5a, 0x05, 0x0a, 0x01, 0x00},// I2C setting - Communication interface
-					{0x5a, 0x04, 0x11, 0x6f, 0x00},// save settings
-					{0x5a, 0x04, 0x02, 0x60, 0x00},// system reset
-					{0x5a, 0x05, 0x05, 0x01, 0x65},// set Output format: standard 9 bytes(cm)
-					{0x5a, 0x05, 0x05, 0x06, 0x6a},// set Output format: standard 9 bytes(mm)
-					{0x5a, 0x05, 0x00, 0x01, 0x60},// obtain data frame(9bytes-cm)
-					{0x5a, 0x05, 0x00, 0x06, 0x65},// obtain data frame(9bytes-mm)
-			};
+
 
 	// calc checksum
 
@@ -113,21 +116,23 @@ uint8_t getStock(uint8_t sensor_id)
 
 void TFminiSTest(void)
 {
+	uint8_t TFminiS_req_packet = TFminiS_req_packet_list[SET_I2C];
+
 	 // UART
-//	for(int i=0; i<sizeof(TFminiS_req_packet); i++){
-//		TFminiS_req_packet[sizeof(TFminiS_req_packet)-1] += TFminiS_req_packet[i];
-//	}
-//
-//	HAL_UART_Transmit(&huart3, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
-//
-//	// request packet
-//	HAL_UART_Transmit(&huart2, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
-//
-//	for(int i=0; i<20; i++){
-//		uint8_t buf = 0;
-//		HAL_UART_Receive(&huart2, &buf, sizeof(buf), 10);
-//		HAL_UART_Transmit(&huart3, &buf, sizeof(buf), 100);
-//	}
-//
-//	HAL_Delay(500);
+	for(int i=0; i<sizeof(TFminiS_req_packet); i++){
+		TFminiS_req_packet[sizeof(TFminiS_req_packet)-1] += TFminiS_req_packet[i];
+	}
+
+	HAL_UART_Transmit(&huart3, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
+
+	// request packet
+	HAL_UART_Transmit(&huart2, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
+
+	for(int i=0; i<20; i++){
+		uint8_t buf = 0;
+		HAL_UART_Receive(&huart2, &buf, sizeof(buf), 10);
+		HAL_UART_Transmit(&huart3, &buf, sizeof(buf), 100);
+	}
+
+	HAL_Delay(500);
 }

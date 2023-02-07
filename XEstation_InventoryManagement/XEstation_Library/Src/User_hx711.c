@@ -5,148 +5,82 @@
 #include "hx711Config.h"
 #include "hx711.h"
 
+hx711_t hx711_arr[HX711_NUM][2];
+int hx711_weight_arr[HX711_NUM][2];
+int hx711_cali_factor[HX711_NUM][3] = {{700, 1700, 2415},//{122, 115, 7100}
+										{220, 0, 0},
+										{225, 0, 0},
+										{215, 0, 0},
+										{89, 118, 0},
+										{0, 0, 0},
+										{700, 1700, 2415},
+										{0, 0, 0},
+										{0, 0, 0}};
 
-int hx711_cali_factor[][2] = {{122, 115},
-										{210, 0},
-										{210, 0},
-										{210, 0},
-										{210, 0},
-										{210, 0},
-										{210, 0}};
+GPIO_TypeDef* HX711_GPIO_Port[HX711_NUM][2] = {{PD01_sck_GPIO_Port, PD01_dout_GPIO_Port},
+												{PD02_sck_GPIO_Port, PD02_dout_GPIO_Port},
+												{PD03_sck_GPIO_Port, PD03_dout_GPIO_Port},
+												{PD04_sck_GPIO_Port, PD04_dout_GPIO_Port},
+												{PD05_sck_GPIO_Port, PD05_dout_GPIO_Port},
+												{EXIC01_sck_GPIO_Port, EXIC01_dout_GPIO_Port},
+												{EXPD01_sck_GPIO_Port, EXPD01_dout_GPIO_Port},
+												{SYR01_sck_GPIO_Port, SYR01_dout_GPIO_Port},
+												{SYR02_sck_GPIO_Port, SYR02_dout_GPIO_Port}};
 
-//GPIO_TypeDef* HX711_GPIO_Port[][2] = {{PD01_sck_GPIO_Port, PD01_dout_GPIO_Port},
-//										{PD02_sck_GPIO_Port, PD02_dout_GPIO_Port},
-//										{PD03_sck_GPIO_Port, PD03_dout_GPIO_Port},
-//										{PD04_sck_GPIO_Port, PD04_dout_GPIO_Port},
-//										{PD05_sck_GPIO_Port, PD05_dout_GPIO_Port},
-//										{EXIC01_sck_GPIO_Port, EXIC01_dout_GPIO_Port},
-//										{EXPD01_sck_GPIO_Port, EXPD01_dout_GPIO_Port}};
-//
-//uint16_t HX711_Pin[][2] = {{PD01_sck_Pin, PD01_dout_Pin},
-//							{PD02_sck_Pin, PD02_dout_Pin},
-//							{PD03_sck_Pin, PD03_dout_Pin},
-//							{PD04_sck_Pin, PD04_dout_Pin},
-//							{PD05_sck_Pin, PD05_dout_Pin},
-//							{EXIC01_sck_Pin, EXIC01_dout_Pin},
-//							{EXPD01_sck_Pin, EXPD01_dout_Pin}};
+uint16_t HX711_Pin[HX711_NUM][2] = {{PD01_sck_Pin, PD01_dout_Pin},
+									{PD02_sck_Pin, PD02_dout_Pin},
+									{PD03_sck_Pin, PD03_dout_Pin},
+									{PD04_sck_Pin, PD04_dout_Pin},
+									{PD05_sck_Pin, PD05_dout_Pin},
+									{EXIC01_sck_Pin, EXIC01_dout_Pin},
+									{EXPD01_sck_Pin, EXPD01_dout_Pin},
+									{SYR01_sck_Pin, SYR01_dout_Pin},
+									{SYR02_sck_Pin, SYR02_dout_Pin}};
 
 void initHx711(void)
 {
-	// load cell
-	// hx711
-	hx711_t* hx711_arr[HX711_NUM][2];
-	printf("gpio port : %x\n",PD01_sck_GPIO_Port);
-//	printf("%x\n", HX711_GPIO_Port[0][SCK]);
-
-	printf("pin :%x\n",PD01_sck_Pin );
-//	printf("%x\n", HX711_Pin[0][SCK] );
-
-	hx711_t loadcellA;
-//	hx711_init(&loadcellA, PD01_sck_GPIO_Port, PD01_sck_Pin, PD01_dout_GPIO_Port, PD01_dout_Pin, 'A');
-
+	// init hx711
+	// it takes time(5s)
 	for(uint8_t i=0; i<HX711_NUM; i++){
-//		hx711_init(hx711_arr[i][CHANNEL_A], HX711_GPIO_Port[i][SCK], HX711_Pin[i][SCK], HX711_GPIO_Port[i][DOUT], HX711_Pin[i][DOUT], 'A');
-		hx711_init(hx711_arr[i][CHANNEL_A], i, 'A');
-
-		hx711_coef_set(hx711_arr[i][CHANNEL_A], hx711_cali_factor[i][CHANNEL_A]);
-		hx711_tare(hx711_arr[i][CHANNEL_A], 10);
-			printf("a completed\n");
+		hx711_init(&hx711_arr[i][CHANNEL_A], HX711_GPIO_Port[i][SCK], HX711_Pin[i][SCK],  HX711_GPIO_Port[i][DOUT], HX711_Pin[i][DOUT], 'A');
+		hx711_coef_set(&hx711_arr[i][CHANNEL_A], hx711_cali_factor[i][CHANNEL_A]); // read afer calibration
+		hx711_tare(&hx711_arr[i][CHANNEL_A], 10);
+		printf("[%d th] a completed\n", i);
 
 		if(hx711_cali_factor[i][CHANNEL_B] != 0){
-//			hx711_init(hx711_arr[i][CHANNEL_B],  HX711_GPIO_Port[i][SCK], HX711_Pin[i][SCK], HX711_GPIO_Port[i][DOUT], HX711_Pin[i][DOUT], 'B');
-			hx711_init(hx711_arr[i][CHANNEL_A], i, 'B');
-
-			hx711_coef_set(hx711_arr[i][CHANNEL_B], hx711_cali_factor[i][CHANNEL_B]);
-			hx711_tare(hx711_arr[i][CHANNEL_B], 10);
+			hx711_init(&hx711_arr[i][CHANNEL_B],  HX711_GPIO_Port[i][SCK], HX711_Pin[i][SCK],  HX711_GPIO_Port[i][DOUT], HX711_Pin[i][DOUT], 'B');
+			hx711_coef_set(&hx711_arr[i][CHANNEL_B], hx711_cali_factor[i][CHANNEL_B]); // read afer calibration
+			hx711_tare(&hx711_arr[i][CHANNEL_B], 10);
 			printf("b completed\n");
 		}
 	}
+	printf("hx711 initialization finished!\n");
+}
 
+void runHx711(uint8_t i)
+{
+	hx711_weight_arr[i][CHANNEL_A] = (int)(hx711_weight(&hx711_arr[i][CHANNEL_A], 10));
+	hx711_weight_arr[i][CHANNEL_B] = (int)(hx711_weight(&hx711_arr[i][CHANNEL_B], 10));
 
-//
-//	hx711_t loadcellA, loadcellB;
-//
-//	hx711_init(&loadcellA,  PD01_sck_GPIO_Port, PD01_sck_Pin,  PD01_dout_GPIO_Port, PD01_dout_Pin, 'A');
-//	hx711_coef_set(&loadcellA, 122); // read afer calibration
-//	hx711_tare(&loadcellA, 10);
-//
-//	hx711_init(&loadcellB,  PD01_sck_GPIO_Port, PD01_sck_Pin,  PD01_dout_GPIO_Port, PD01_dout_Pin, 'B');
-//	hx711_coef_set(&loadcellB, 115); // read afer calibration
-//	hx711_tare(&loadcellB, 10);
-////
-
-	while(1){
-		int A = (int)(hx711_weight(hx711_arr[0][CHANNEL_A], 10));
-		int B = (int)(hx711_weight(hx711_arr[0][CHANNEL_B], 10));
-		printf("A:%d g\n", A);
-		printf("B:%d g\n", B);
-		printf("A+B:%d g\n\n\n", A+B+2515);
-		HAL_Delay(100);
+	if(hx711_cali_factor[i][CHANNEL_B] != 0){
+		hx711_weight_arr[i] = hx711_weight_arr[i][CHANNEL_A]+hx711_weight_arr[i][CHANNEL_B]+hx711_cali_factor[i][ZERO_VAL];
+		printf("[%d th] A:%d g, B:%d g ====> %d g\n\n", i, hx711_weight_arr[i][CHANNEL_A], hx711_weight_arr[i][CHANNEL_B], hx711_weight_arr[i]);
 	}
-}
-//void initHx711(void)
-//{
-//	// load cell
-//	// init hx711
-//	hx711_t* hx711_arr[HX711_NUM];
-//
-//	for(uint8_t i=0; i<HX711_NUM; i++){
-//		hx711_init(hx711_arr[i],  HX711_GPIO_Port[i][SCK], HX711_Pin[i][SCK], HX711_GPIO_Port[i][DOUT], HX711_Pin[i][DOUT]);
-//		hx711_coef_set(hx711_arr[i], hx711_cali_factor[i]);
-//		hx711_tare(hx711_arr[i], 10);
-//	}
-//
-//
-//	hx711_t loadcellA;
-////
-////	float weight;
-////
-//	int i=0;
-//
-//	hx711_init(&loadcellA,  PD01_sck_GPIO_Port, PD01_sck_Pin,  PD01_dout_GPIO_Port, PD01_dout_Pin);
-//	hx711_coef_set(&loadcellA, 210.0); // read afer calibration - -1000
-//	hx711_tare(&loadcellA, 10);
-//	printf("test started1\n");
-//
-////	hx711_init(&loadcellA,  HX711_GPIO_Port[i][SCK], HX711_Pin[i][SCK], HX711_GPIO_Port[i][DOUT], HX711_Pin[i][DOUT]);//
-////	hx711_coef_set(&loadcellA, 210); // read afer calibration
-////	hx711_tare(&loadcellA, 10);
-//
-//	while(1){
-//		printf("A:%d g\n", (int)(hx711_weight(&loadcellA, 10)));
-////		printf("A:%d g\n", (int)(hx711_weight(hx711_arr[0], 10)));
-//
-//		HAL_Delay(1000);
-//	}
-//}
-void hx711Test(void)
-{
-	hx711_t loadcellA, loadcellB;
-	float weight;
-
-	int offsetA = -4597;
-	int offsetB = 21325-14202-7119;
-	while(1){
-		printf("while ...\n");
-//		int weightA = (int)(hx711_weight(&loadcellA, 10)) - offsetA;
-	//	int weightB = (int)(hx711_weight(&loadcellB, 10)) - offsetB;
-
-//		sprintf(uartBuf, "A:%d g \rB:%d g\n", weightA, weightB);			//convert to string
-//		HAL_UART_Transmit(&huart3, (uint8_t *)uartBuf, strlen(uartBuf), 100);
-		printf("A:%d g\n", (int)(hx711_weight(&loadcellA, 10)));
-		HAL_Delay(1000);
+	else{
+		hx711_weight_arr[i] = hx711_weight_arr[i][CHANNEL_A];
+		printf("[%d th] A:%d g\n", i, hx711_weight_arr[i][CHANNEL_A]);
 	}
-}
-uint8_t get_data(uint8_t sensor_id)
-{
-	hx711_t loadcellA, loadcellB;
-
-	return 0;
+	HAL_Delay(100);
 }
 
-uint8_t set_threash(uint8_t sensor_id)
+int get_data(uint8_t sensor_id)
 {
+	return hx711_weight_arr[sensor_id];
+}
 
+bool set_threash(uint8_t sensor_id, int data)
+{
+	hx711_cali_factor[sensor_id][ZERO_VAL] = data;
 
-	return 0;
+	return true;
 }

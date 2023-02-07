@@ -30,9 +30,7 @@ extern "C" {
 //####################################################################################################################
 #define SCK  0
 #define DOUT 1
-
-//GPIO_TypeDef* HX711_GPIO_Port[][2];
-//uint16_t HX711_Pin[][2];
+#define HX711_NUM 9
 
 //####################################################################################################################
 
@@ -50,10 +48,7 @@ typedef struct
 }hx711_t;
 
 //####################################################################################################################
-//void hx711_init(hx711_t *hx711, uint8_t hx711_idx, GPIO_TypeDef* HX711_GPIO_Port, uint16_t HX711_Pin, char channel);
-//void        hx711_init(hx711_t *hx711, GPIO_TypeDef *clk_gpio, uint16_t clk_pin, GPIO_TypeDef *dat_gpio, uint16_t dat_pin, char channel);
-void 		hx711_init(hx711_t *hx711, uint8_t hx711_idx, char channel);
-
+void        hx711_init(hx711_t *hx711, GPIO_TypeDef *clk_gpio, uint16_t clk_pin, GPIO_TypeDef *dat_gpio, uint16_t dat_pin, char channel);
 int32_t     hx711_value(hx711_t *hx711);
 int32_t     hx711_value_ave(hx711_t *hx711, uint16_t sample);
 

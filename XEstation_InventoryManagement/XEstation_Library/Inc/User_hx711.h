@@ -8,15 +8,17 @@ extern "C" {
 #endif
 #include "main.h"
 
-#define HX711_NUM 7
+
 
 #define CHANNEL_A 0
 #define CHANNEL_B 1
+#define ZERO_VAL  2
 
 void initHx711(void);
+void runHx711(uint8_t i);
 
-uint8_t get_data(uint8_t sensor_id);
-uint8_t set_threash(uint8_t sensor_id);
+int get_data(uint8_t sensor_id);
+bool set_threash(uint8_t sensor_id, int data);
 
 
 #ifdef __cplusplus

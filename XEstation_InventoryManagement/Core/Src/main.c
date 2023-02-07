@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -52,9 +53,45 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart5;
+UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 UART_HandleTypeDef huart6;
 
+/* Definitions for defaultTask */
+osThreadId_t defaultTaskHandle;
+const osThreadAttr_t defaultTask_attributes = {
+  .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for Task_hx711_01 */
+osThreadId_t Task_hx711_01Handle;
+const osThreadAttr_t Task_hx711_01_attributes = {
+  .name = "Task_hx711_01",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for Task_hx711_02 */
+osThreadId_t Task_hx711_02Handle;
+const osThreadAttr_t Task_hx711_02_attributes = {
+  .name = "Task_hx711_02",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for Task_hx711_03 */
+osThreadId_t Task_hx711_03Handle;
+const osThreadAttr_t Task_hx711_03_attributes = {
+  .name = "Task_hx711_03",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for Task_hx711_04 */
+osThreadId_t Task_hx711_04Handle;
+const osThreadAttr_t Task_hx711_04_attributes = {
+  .name = "Task_hx711_04",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 //uint8_t UART5_rxBuffer[16] = {0};
 
@@ -72,6 +109,13 @@ static void MX_TIM3_Init(void);
 static void MX_UART5_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USART6_UART_Init(void);
+static void MX_USART2_UART_Init(void);
+void StartDefaultTask(void *argument);
+void StartTask02(void *argument);
+void StartTask03(void *argument);
+void StartTask04(void *argument);
+void StartTask05(void *argument);
+
 /* USER CODE BEGIN PFP */
 /* USER CODE END PFP */
 
@@ -121,6 +165,7 @@ int main(void)
   MX_UART5_Init();
   MX_USART3_UART_Init();
   MX_USART6_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
 //  init_Lidar();
@@ -130,6 +175,53 @@ int main(void)
 
   /* USER CODE END 2 */
 
+  /* Init scheduler */
+  osKernelInitialize();
+
+  /* USER CODE BEGIN RTOS_MUTEX */
+  /* add mutexes, ... */
+  /* USER CODE END RTOS_MUTEX */
+
+  /* USER CODE BEGIN RTOS_SEMAPHORES */
+  /* add semaphores, ... */
+  /* USER CODE END RTOS_SEMAPHORES */
+
+  /* USER CODE BEGIN RTOS_TIMERS */
+  /* start timers, add new ones, ... */
+  /* USER CODE END RTOS_TIMERS */
+
+  /* USER CODE BEGIN RTOS_QUEUES */
+  /* add queues, ... */
+  /* USER CODE END RTOS_QUEUES */
+
+  /* Create the thread(s) */
+  /* creation of defaultTask */
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+
+  /* creation of Task_hx711_01 */
+  Task_hx711_01Handle = osThreadNew(StartTask02, NULL, &Task_hx711_01_attributes);
+
+  /* creation of Task_hx711_02 */
+  Task_hx711_02Handle = osThreadNew(StartTask03, NULL, &Task_hx711_02_attributes);
+
+  /* creation of Task_hx711_03 */
+  Task_hx711_03Handle = osThreadNew(StartTask04, NULL, &Task_hx711_03_attributes);
+
+  /* creation of Task_hx711_04 */
+  Task_hx711_04Handle = osThreadNew(StartTask05, NULL, &Task_hx711_04_attributes);
+
+  /* USER CODE BEGIN RTOS_THREADS */
+  /* add threads, ... */
+  /* USER CODE END RTOS_THREADS */
+
+  /* USER CODE BEGIN RTOS_EVENTS */
+  /* add events, ... */
+  /* USER CODE END RTOS_EVENTS */
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -138,8 +230,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 //	  pcTest();
-
-	  HAL_Delay(1000);
+//	  runHx711(6);
+//	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -467,10 +559,6 @@ static void MX_TIM3_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_IC_ConfigChannel(&htim3, &sConfigIC, TIM_CHANNEL_3) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM3_Init 2 */
 
   /* USER CODE END TIM3_Init 2 */
@@ -507,6 +595,39 @@ static void MX_UART5_Init(void)
   /* USER CODE BEGIN UART5_Init 2 */
 
   /* USER CODE END UART5_Init 2 */
+
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 115200;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
 
 }
 
@@ -595,7 +716,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, EXPD01_sck_Pin|PD03_sck_Pin|PD05_sck_Pin|EXIC01_sck_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, EXPD01_sck_Pin|PD03_sck_Pin|PD05_sck_Pin|EXIC01_sck_Pin
+                          |SYR01_sck_Pin|SYR02_sck_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(PD01_sck_GPIO_Port, PD01_sck_Pin, GPIO_PIN_RESET);
@@ -612,8 +734,10 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(PD02_sck_GPIO_Port, PD02_sck_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : EXPD01_sck_Pin PD03_sck_Pin PD05_sck_Pin EXIC01_sck_Pin */
-  GPIO_InitStruct.Pin = EXPD01_sck_Pin|PD03_sck_Pin|PD05_sck_Pin|EXIC01_sck_Pin;
+  /*Configure GPIO pins : EXPD01_sck_Pin PD03_sck_Pin PD05_sck_Pin EXIC01_sck_Pin
+                           SYR01_sck_Pin SYR02_sck_Pin */
+  GPIO_InitStruct.Pin = EXPD01_sck_Pin|PD03_sck_Pin|PD05_sck_Pin|EXIC01_sck_Pin
+                          |SYR01_sck_Pin|SYR02_sck_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -632,6 +756,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(PD01_sck_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : SYR01_dout_Pin */
+  GPIO_InitStruct.Pin = SYR01_dout_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(SYR01_dout_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : CP01_echo_Pin */
   GPIO_InitStruct.Pin = CP01_echo_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -639,8 +769,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(CP01_echo_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PD01_dout_Pin PD03_dout_Pin */
-  GPIO_InitStruct.Pin = PD01_dout_Pin|PD03_dout_Pin;
+  /*Configure GPIO pins : SYR02_dout_Pin PD01_dout_Pin PD03_dout_Pin */
+  GPIO_InitStruct.Pin = SYR02_dout_Pin|PD01_dout_Pin|PD03_dout_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -683,6 +813,132 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
+/* USER CODE BEGIN Header_StartDefaultTask */
+/**
+  * @brief  Function implementing the defaultTask thread.
+  * @param  argument: Not used
+  * @retval None
+  */
+/* USER CODE END Header_StartDefaultTask */
+void StartDefaultTask(void *argument)
+{
+  /* USER CODE BEGIN 5 */
+  /* Infinite loop */
+  for(;;)
+  {
+//	 printf("test01\n");
+	 HAL_Delay(1000);
+	 //	  runHx711(0);
+    osDelay(1);
+  }
+  /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartTask02 */
+/**
+* @brief Function implementing the Task_hx711_01 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask02 */
+void StartTask02(void *argument)
+{
+  /* USER CODE BEGIN StartTask02 */
+  /* Infinite loop */
+  for(;;)
+  {
+//	 printf("test02\n");
+		 HAL_Delay(1005);
+
+//	  runHx711(1);
+
+    osDelay(1);
+  }
+  /* USER CODE END StartTask02 */
+}
+
+/* USER CODE BEGIN Header_StartTask03 */
+/**
+* @brief Function implementing the Task_hx711_02 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask03 */
+void StartTask03(void *argument)
+{
+  /* USER CODE BEGIN StartTask03 */
+  /* Infinite loop */
+  for(;;)
+  {
+//		 printf("test03\n");
+			 HAL_Delay(1025);
+    osDelay(1);
+  }
+  /* USER CODE END StartTask03 */
+}
+
+/* USER CODE BEGIN Header_StartTask04 */
+/**
+* @brief Function implementing the Task_hx711_03 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask04 */
+void StartTask04(void *argument)
+{
+  /* USER CODE BEGIN StartTask04 */
+  /* Infinite loop */
+  for(;;)
+  {
+//	  runHx711(2);
+//		 printf("test04\n");
+			 HAL_Delay(1055);
+    osDelay(1);
+  }
+  /* USER CODE END StartTask04 */
+}
+
+/* USER CODE BEGIN Header_StartTask05 */
+/**
+* @brief Function implementing the Task_hx711_04 thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTask05 */
+void StartTask05(void *argument)
+{
+  /* USER CODE BEGIN StartTask05 */
+  /* Infinite loop */
+  for(;;)
+  {
+//	  runHx711(3);
+	  runHx711(0);
+    osDelay(1);
+  }
+  /* USER CODE END StartTask05 */
+}
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM13 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM13) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
