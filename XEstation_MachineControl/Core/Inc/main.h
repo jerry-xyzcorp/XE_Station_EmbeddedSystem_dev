@@ -154,10 +154,6 @@ void Error_Handler(void);
 #define PD02_heat_IN1_GPIO_Port GPIOB
 #define PD01_heat_IN2_Pin GPIO_PIN_15
 #define PD01_heat_IN2_GPIO_Port GPIOB
-#define PC_TX_Pin GPIO_PIN_8
-#define PC_TX_GPIO_Port GPIOD
-#define PC_RX_Pin GPIO_PIN_9
-#define PC_RX_GPIO_Port GPIOD
 #define PD02_DCmix_IN2_Pin GPIO_PIN_11
 #define PD02_DCmix_IN2_GPIO_Port GPIOD
 #define PD02_DCmix_IN1_Pin GPIO_PIN_12
@@ -174,6 +170,10 @@ void Error_Handler(void);
 #define PD04_heat_EN_GPIO_Port GPIOC
 #define PD03_heat_EN_Pin GPIO_PIN_15
 #define PD03_heat_EN_GPIO_Port GPIOA
+#define PC_TX_Pin GPIO_PIN_10
+#define PC_TX_GPIO_Port GPIOC
+#define PC_RX_Pin GPIO_PIN_11
+#define PC_RX_GPIO_Port GPIOC
 #define CupD_TX_Pin GPIO_PIN_12
 #define CupD_TX_GPIO_Port GPIOC
 #define PD03_DCpowder_IN1_Pin GPIO_PIN_0

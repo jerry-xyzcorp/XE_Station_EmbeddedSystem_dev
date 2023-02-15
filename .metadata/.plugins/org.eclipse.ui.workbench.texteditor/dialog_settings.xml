@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="PD01_sck_Pin"/>
+		<item key="selection" value="ICE01_ice"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="ICE01_ice"/>
+			<item value="ICE01"/>
+			<item value="ICE01_water_Pin"/>
+			<item value="ice01_Pin"/>
+			<item value="ice"/>
+			<item value="relay"/>
+			<item value="relau"/>
 			<item value="PD01_sck_Pin"/>
 			<item value="PD01_dout_Pin"/>
 			<item value="PD01_dout_GPIO_Port"/>
@@ -16,22 +23,15 @@
 			<item value="hx711_calibration"/>
 			<item value="coef"/>
 			<item value="response_packet_protocol_run_3d"/>
-			<item value="CUP"/>
-			<item value="UART5"/>
-			<item value="UART"/>
-			<item value="dir"/>
-			<item value="lidarData_3d"/>
-			<item value="FORMAT_3D_LEN"/>
-			<item value="57600"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="11"/>
-		<item key="DIALOG_Y_ORIGIN" value="176"/>
+		<item key="DIALOG_X_ORIGIN" value="1294"/>
+		<item key="DIALOG_Y_ORIGIN" value="315"/>
 		<item key="DIALOG_WIDTH" value="393"/>
 		<item key="DIALOG_HEIGHT" value="523"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

@@ -19,6 +19,18 @@ extern "C" {
 #define GetAddr(sensor_id) (sensor_id << 1)
 #define ID_OFFSET		0x21
 
+#define OBTAIN_FIRMWARE_VERSION 0
+#define SET_I2C 				1
+#define SAVE_SETTING			2
+#define SYSTEM_RESET			3
+#define SET_OUTPUT_CM		    4
+#define SET_OUTPUT_MM			5
+#define OBTAIN_DATA_CM			6
+#define OBTAIN_DATA_MM			7
+#define SET_12C_ADDR			8
+
+#define I2C_ADDR 				3
+
 // sensor ID
 #define BK01		0x21
 #define BK02		0x22
@@ -61,6 +73,11 @@ uint8_t* 	initPacket(uint8_t mode);
 void	 	getDistance(uint8_t sensor_id);
 uint8_t 	getStock(uint8_t sensor_id);
 void 		TFminiSTest(void);
+
+uint8_t* 	TFminiS_I2C(uint8_t sensor_id, uint8_t cmd);
+void 		TFminiS_setting(void);
+void 		TFminiS_uart_setting(uint8_t cmd);
+
 
 #ifdef __cplusplus
 }

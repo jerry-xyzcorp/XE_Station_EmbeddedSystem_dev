@@ -13,6 +13,7 @@ extern "C" {
 #define CHANNEL_A 0
 #define CHANNEL_B 1
 #define ZERO_VAL  2
+#define SUM 	  2
 
 void initHx711(void);
 void runHx711(uint8_t i);

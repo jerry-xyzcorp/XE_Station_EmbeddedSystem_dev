@@ -167,11 +167,12 @@ int main(void)
   MX_USART6_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  	TFminiS_setting();
+//  	getDistance(0);
 //  init_Lidar();
 //  Lidar3dTest();
-  printf("start hx711 !!\n");
-  initHx711();
+//  printf("start hx711 !!\n");
+//  initHx711();
 
   /* USER CODE END 2 */
 
@@ -729,10 +730,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOF, PD01_echo_Pin|JG01_echo_Pin|JG02_echo_Pin|LD01_echo_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, PD04_sck_Pin|CF01_echo_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, PD02_sck_Pin|CF01_sck_Pin|PD02_sckB6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(PD02_sck_GPIO_Port, PD02_sck_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, PD04_sck_Pin|CF01_echo_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : EXPD01_sck_Pin PD03_sck_Pin PD05_sck_Pin EXIC01_sck_Pin
                            SYR01_sck_Pin SYR02_sck_Pin */
@@ -769,8 +770,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(CP01_echo_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SYR02_dout_Pin PD01_dout_Pin PD03_dout_Pin */
-  GPIO_InitStruct.Pin = SYR02_dout_Pin|PD01_dout_Pin|PD03_dout_Pin;
+  /*Configure GPIO pins : SYR02_dout_Pin PD01_dout_Pin PD03_dout_Pin CF02_dout_Pin */
+  GPIO_InitStruct.Pin = SYR02_dout_Pin|PD01_dout_Pin|PD03_dout_Pin|CF02_dout_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -788,6 +789,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : PD02_sck_Pin CF01_sck_Pin PD02_sckB6_Pin */
+  GPIO_InitStruct.Pin = PD02_sck_Pin|CF01_sck_Pin|PD02_sckB6_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
   /*Configure GPIO pins : EXPD01_dout_Pin PD04_dout_Pin */
   GPIO_InitStruct.Pin = EXPD01_dout_Pin|PD04_dout_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -801,12 +809,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PD02_sck_Pin */
-  GPIO_InitStruct.Pin = PD02_sck_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  /*Configure GPIO pin : CF01_dout_Pin */
+  GPIO_InitStruct.Pin = CF01_dout_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(PD02_sck_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(CF01_dout_GPIO_Port, &GPIO_InitStruct);
 
 }
 

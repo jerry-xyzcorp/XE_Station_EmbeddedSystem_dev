@@ -5,15 +5,13 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 
-#define OBTAIN_FIRMWARE_VERSION 0
-#define SET_I2C 				1
-#define SAVE_SETTING			2
-#define SYSTEM_RESET			3
-#define SET_OUTPUT_CM		    4
-#define SET_OUTPUT_MM			5
-#define OBTAIN_DATA_CM			6
-#define OBTAIN_DATA_MM			7
+extern UART_HandleTypeDef huart2; // TFminiS - UART SETTING
+extern UART_HandleTypeDef huart3; // PC
 
+extern I2C_HandleTypeDef hi2c1;
+uint8_t rxbuf[1] = {0};
+uint8_t rxdata[20] = {0,};
+uint8_t buf[1] = {0};
 
 uint8_t TFminiS_req_packet_list[][5] =
 				{
@@ -25,6 +23,7 @@ uint8_t TFminiS_req_packet_list[][5] =
 						{0x5a, 0x05, 0x05, 0x06, 0x6a},// set Output format: standard 9 bytes(mm)
 						{0x5a, 0x05, 0x00, 0x01, 0x60},// obtain data frame(9bytes-cm)
 						{0x5a, 0x05, 0x00, 0x06, 0x65},// obtain data frame(9bytes-mm)
+						{0x5a, 0x05, 0x0b, 0x01, 0x00} // modify slave address of I2C
 				};
 
 void initTFminiS(void)
@@ -67,17 +66,51 @@ uint8_t* initPacket(uint8_t mode)
 	return TFminiS_req_packet_list[mode];
 }
 
-void getDistance(uint8_t sensor_id)
+uint8_t* TFminiS_I2C(uint8_t sensor_id, uint8_t cmd)
 {
-	uint8_t TFminiS_req_packet = initPacket(OBTAIN_FIRMWARE_VERSION);
+	printf("0 ");
 
 	uint8_t buf[1] = {GetAddr(sensor_id)};
 	uint8_t rxbuf[1] = {0};
 	uint8_t rxdata[20] = {0};
+	printf("1");
+	// 1. write
+	uint8_t ret = HAL_I2C_Master_Transmit(&hi2c1, GetAddr(sensor_id), TFminiS_req_packet_list[cmd], sizeof(TFminiS_req_packet_list[cmd]), 10);
+	printf("2");
+	if ( ret != HAL_OK ) {
+		error_value = ret;
+		error[TX_ERROR] = true;
+	} else {
+		HAL_Delay(100);
+		// 2. read
+		 ret = HAL_I2C_Master_Transmit(&hi2c1, GetAddr(sensor_id)|0x01, buf, sizeof(buf), 10);
+
+		 for(int i=0; i<sizeof(rxdata); i++){
+			 if ( ret == HAL_OK ){
+				 ret = HAL_I2C_Master_Receive(&hi2c1, GetAddr(sensor_id)|0x01, rxbuf, sizeof(rxbuf), HAL_MAX_DELAY);
+				 if ( ret == HAL_OK ){
+					 rxdata[i] = rxbuf[0];
+				 }
+			 }
+		 }
+	}
+	return rxdata;
+}
+
+void getDistance(uint8_t sensor_id)
+{
+	sensor_id = 0x10;//LD01;
+	uint8_t cmd = OBTAIN_DATA_MM;
+	printf("test started\n");
+
+
+	buf[0] = GetAddr(sensor_id);
+	printf("1");
+
 
 	// 1. write
-	uint8_t ret = HAL_I2C_Master_Transmit(&hi2c1, GetAddr(sensor_id), TFminiS_req_packet, sizeof(TFminiS_req_packet), 10);
-
+	uint8_t ret = HAL_I2C_Master_Transmit(&hi2c1, GetAddr(sensor_id), TFminiS_req_packet_list[cmd], sizeof(TFminiS_req_packet_list[cmd]), 10);
+	printf("2");
 	if ( ret != HAL_OK ) {
 		error_value = ret;
 		error[TX_ERROR] = true;
@@ -96,11 +129,22 @@ void getDistance(uint8_t sensor_id)
 		 }
 	}
 
+
+//	uint8_t* rxdata = TFminiS_I2C(sensor_id, OBTAIN_DATA_MM);
+
+
+
+
+
+
 	// calc & update distance
 	uint8_t ID = sensor_id - ID_OFFSET;
+
 	for(int i=0; i<sizeof(rxdata); i++){
 		if(rxdata[i] == 0x59 && rxdata[i+1] == 0x59){
-			TFminiS_info[ID][_DIST] = rxdata[i+2]|(rxdata[i+3]<<8);
+			printf("distance : %d\n", rxdata[i+2]|(rxdata[i+3]<<8));
+//			TFminiS_info[ID][_DIST] = rxdata[i+2]|(rxdata[i+3]<<8);
+
 			break;
 		}
 	}
@@ -114,19 +158,35 @@ uint8_t getStock(uint8_t sensor_id)
 	return (uint8_t)TFminiS_info[ID][_STOCK_NUM];
 }
 
-void TFminiSTest(void)
+void TFminiS_setting(void)
 {
-	uint8_t TFminiS_req_packet = TFminiS_req_packet_list[SET_I2C];
+	TFminiS_uart_setting(SET_OUTPUT_MM);
 
+//	TFminiS_req_packet_list[SET_12C_ADDR][I2C_ADDR] = LD01;
+//	TFminiS_uart_setting(SET_12C_ADDR);
+//
+//	TFminiS_uart_setting(SET_I2C);
+//	TFminiS_uart_setting(SAVE_SETTING);
+
+//	uint8_t sensor_id = 0x01;
+//	TFminiS_I2C(sensor_id, SET_12C_ADDR);
+//
+//	sensor_id = LD01;
+//	getDistance(sensor_id);
+}
+
+void TFminiS_uart_setting(uint8_t cmd)
+{
 	 // UART
-	for(int i=0; i<sizeof(TFminiS_req_packet); i++){
-		TFminiS_req_packet[sizeof(TFminiS_req_packet)-1] += TFminiS_req_packet[i];
+	if (cmd == SET_I2C || cmd == SET_12C_ADDR){
+		for(int i=0; i<sizeof(TFminiS_req_packet_list[cmd]); i++){
+			TFminiS_req_packet_list[cmd][sizeof(TFminiS_req_packet_list[cmd])-1] += TFminiS_req_packet_list[cmd][i];
+		}
 	}
-
-	HAL_UART_Transmit(&huart3, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
+	HAL_UART_Transmit(&huart3, (uint8_t *)TFminiS_req_packet_list[cmd], sizeof(TFminiS_req_packet_list[cmd]), 100);
 
 	// request packet
-	HAL_UART_Transmit(&huart2, (uint8_t *)TFminiS_req_packet, sizeof(TFminiS_req_packet), 100);
+	HAL_UART_Transmit(&huart2, (uint8_t *)TFminiS_req_packet_list[cmd], sizeof(TFminiS_req_packet_list[cmd]), 100);
 
 	for(int i=0; i<20; i++){
 		uint8_t buf = 0;

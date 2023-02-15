@@ -13,13 +13,13 @@
 
 
 void relayTest(void);
-void iceDispenser_SetMode(void);
+void iceDispenser_SetMode(uint16_t water_time, uint16_t ice_time);
 
 
 void init_iceDispensor(void);
 bool stopAll(void);
 uint8_t getStatus_iceDispensor(void);
-bool startExit(uint16_t water_time, uint16_t ice_time);
+bool startExit(uint32_t water_time, uint32_t ice_time);
 
 
 

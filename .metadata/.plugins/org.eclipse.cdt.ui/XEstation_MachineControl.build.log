@@ -1,6 +1,1122 @@
-16:17:02 **** Incremental Build of configuration Debug for project XEstation_MachineControl ****
+17:29:33 **** Incremental Build of configuration Debug for project XEstation_MachineControl ****
 make -j8 all 
+arm-none-eabi-gcc "../XEstation_Library/Src/User_BeverageManufacturing.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_BeverageManufacturing.d" -MT"XEstation_Library/Src/User_BeverageManufacturing.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_BeverageManufacturing.o"
 arm-none-eabi-gcc "../XEstation_Library/Src/User_CupLidDispenser.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_CupLidDispenser.d" -MT"XEstation_Library/Src/User_CupLidDispenser.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_CupLidDispenser.o"
+arm-none-eabi-gcc "../XEstation_Library/Src/User_IceDispenser.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_IceDispenser.d" -MT"XEstation_Library/Src/User_IceDispenser.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_IceDispenser.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o"
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:96:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   96 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:89:30: note: in expansion of macro 'GPIO_PIN_10'
+   89 | #define PD01_DCpowder_EN_Pin GPIO_PIN_10
+      |                              ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:32:38: note: in expansion of macro 'PD01_DCpowder_EN_Pin'
+   32 | uint16_t* PD_DCpowder_Pin[][3] =   {{PD01_DCpowder_EN_Pin, PD01_DCpowder_IN1_Pin, PD01_DCpowder_IN2_Pin},
+      |                                      ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:96:36: note: (near initialization for 'PD_DCpowder_Pin[0][0]')
+   96 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:89:30: note: in expansion of macro 'GPIO_PIN_10'
+   89 | #define PD01_DCpowder_EN_Pin GPIO_PIN_10
+      |                              ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:32:38: note: in expansion of macro 'PD01_DCpowder_EN_Pin'
+   32 | uint16_t* PD_DCpowder_Pin[][3] =   {{PD01_DCpowder_EN_Pin, PD01_DCpowder_IN1_Pin, PD01_DCpowder_IN2_Pin},
+      |                                      ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:89:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   89 | #define GPIO_PIN_3                 ((uint16_t)0x0008)  /* Pin 3 selected    */
+      |                                    ^
+../Core/Inc/main.h:77:31: note: in expansion of macro 'GPIO_PIN_3'
+   77 | #define PD01_DCpowder_IN1_Pin GPIO_PIN_3
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:32:60: note: in expansion of macro 'PD01_DCpowder_IN1_Pin'
+   32 | uint16_t* PD_DCpowder_Pin[][3] =   {{PD01_DCpowder_EN_Pin, PD01_DCpowder_IN1_Pin, PD01_DCpowder_IN2_Pin},
+      |                                                            ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:89:36: note: (near initialization for 'PD_DCpowder_Pin[0][1]')
+   89 | #define GPIO_PIN_3                 ((uint16_t)0x0008)  /* Pin 3 selected    */
+      |                                    ^
+../Core/Inc/main.h:77:31: note: in expansion of macro 'GPIO_PIN_3'
+   77 | #define PD01_DCpowder_IN1_Pin GPIO_PIN_3
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:32:60: note: in expansion of macro 'PD01_DCpowder_IN1_Pin'
+   32 | uint16_t* PD_DCpowder_Pin[][3] =   {{PD01_DCpowder_EN_Pin, PD01_DCpowder_IN1_Pin, PD01_DCpowder_IN2_Pin},
+      |                                                            ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:91:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   91 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:81:31: note: in expansion of macro 'GPIO_PIN_5'
+   81 | #define PD01_DCpowder_IN2_Pin GPIO_PIN_5
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:32:83: note: in expansion of macro 'PD01_DCpowder_IN2_Pin'
+   32 | uint16_t* PD_DCpowder_Pin[][3] =   {{PD01_DCpowder_EN_Pin, PD01_DCpowder_IN1_Pin, PD01_DCpowder_IN2_Pin},
+      |                                                                                   ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:91:36: note: (near initialization for 'PD_DCpowder_Pin[0][2]')
+   91 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:81:31: note: in expansion of macro 'GPIO_PIN_5'
+   81 | #define PD01_DCpowder_IN2_Pin GPIO_PIN_5
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:32:83: note: in expansion of macro 'PD01_DCpowder_IN2_Pin'
+   32 | uint16_t* PD_DCpowder_Pin[][3] =   {{PD01_DCpowder_EN_Pin, PD01_DCpowder_IN1_Pin, PD01_DCpowder_IN2_Pin},
+      |                                                                                   ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:91:30: note: in expansion of macro 'GPIO_PIN_0'
+   91 | #define PD02_DCpowder_EN_Pin GPIO_PIN_0
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:33:11: note: in expansion of macro 'PD02_DCpowder_EN_Pin'
+   33 |          {PD02_DCpowder_EN_Pin, PD02_DCpowder_IN1_Pin, PD02_DCpowder_IN2_Pin},
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: note: (near initialization for 'PD_DCpowder_Pin[1][0]')
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:91:30: note: in expansion of macro 'GPIO_PIN_0'
+   91 | #define PD02_DCpowder_EN_Pin GPIO_PIN_0
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:33:11: note: in expansion of macro 'PD02_DCpowder_EN_Pin'
+   33 |          {PD02_DCpowder_EN_Pin, PD02_DCpowder_IN1_Pin, PD02_DCpowder_IN2_Pin},
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:88:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   88 | #define GPIO_PIN_2                 ((uint16_t)0x0004)  /* Pin 2 selected    */
+      |                                    ^
+../Core/Inc/main.h:75:31: note: in expansion of macro 'GPIO_PIN_2'
+   75 | #define PD02_DCpowder_IN1_Pin GPIO_PIN_2
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:33:33: note: in expansion of macro 'PD02_DCpowder_IN1_Pin'
+   33 |          {PD02_DCpowder_EN_Pin, PD02_DCpowder_IN1_Pin, PD02_DCpowder_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:88:36: note: (near initialization for 'PD_DCpowder_Pin[1][1]')
+   88 | #define GPIO_PIN_2                 ((uint16_t)0x0004)  /* Pin 2 selected    */
+      |                                    ^
+../Core/Inc/main.h:75:31: note: in expansion of macro 'GPIO_PIN_2'
+   75 | #define PD02_DCpowder_IN1_Pin GPIO_PIN_2
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:33:33: note: in expansion of macro 'PD02_DCpowder_IN1_Pin'
+   33 |          {PD02_DCpowder_EN_Pin, PD02_DCpowder_IN1_Pin, PD02_DCpowder_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
+      |                                    ^
+../Core/Inc/main.h:93:31: note: in expansion of macro 'GPIO_PIN_1'
+   93 | #define PD02_DCpowder_IN2_Pin GPIO_PIN_1
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:33:56: note: in expansion of macro 'PD02_DCpowder_IN2_Pin'
+   33 |          {PD02_DCpowder_EN_Pin, PD02_DCpowder_IN1_Pin, PD02_DCpowder_IN2_Pin},
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: note: (near initialization for 'PD_DCpowder_Pin[1][2]')
+   87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
+      |                                    ^
+../Core/Inc/main.h:93:31: note: in expansion of macro 'GPIO_PIN_1'
+   93 | #define PD02_DCpowder_IN2_Pin GPIO_PIN_1
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:33:56: note: in expansion of macro 'PD02_DCpowder_IN2_Pin'
+   33 |          {PD02_DCpowder_EN_Pin, PD02_DCpowder_IN1_Pin, PD02_DCpowder_IN2_Pin},
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:125:30: note: in expansion of macro 'GPIO_PIN_0'
+  125 | #define PD03_DCpowder_EN_Pin GPIO_PIN_0
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:34:11: note: in expansion of macro 'PD03_DCpowder_EN_Pin'
+   34 |          {PD03_DCpowder_EN_Pin, PD03_DCpowder_IN1_Pin, PD03_DCpowder_IN2_Pin},
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: note: (near initialization for 'PD_DCpowder_Pin[2][0]')
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:125:30: note: in expansion of macro 'GPIO_PIN_0'
+  125 | #define PD03_DCpowder_EN_Pin GPIO_PIN_0
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:34:11: note: in expansion of macro 'PD03_DCpowder_EN_Pin'
+   34 |          {PD03_DCpowder_EN_Pin, PD03_DCpowder_IN1_Pin, PD03_DCpowder_IN2_Pin},
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:179:31: note: in expansion of macro 'GPIO_PIN_0'
+  179 | #define PD03_DCpowder_IN1_Pin GPIO_PIN_0
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:34:33: note: in expansion of macro 'PD03_DCpowder_IN1_Pin'
+   34 |          {PD03_DCpowder_EN_Pin, PD03_DCpowder_IN1_Pin, PD03_DCpowder_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: note: (near initialization for 'PD_DCpowder_Pin[2][1]')
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:179:31: note: in expansion of macro 'GPIO_PIN_0'
+  179 | #define PD03_DCpowder_IN1_Pin GPIO_PIN_0
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:34:33: note: in expansion of macro 'PD03_DCpowder_IN1_Pin'
+   34 |          {PD03_DCpowder_EN_Pin, PD03_DCpowder_IN1_Pin, PD03_DCpowder_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
+      |                                    ^
+../Core/Inc/main.h:181:31: note: in expansion of macro 'GPIO_PIN_1'
+  181 | #define PD03_DCpowder_IN2_Pin GPIO_PIN_1
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:34:56: note: in expansion of macro 'PD03_DCpowder_IN2_Pin'
+   34 |          {PD03_DCpowder_EN_Pin, PD03_DCpowder_IN1_Pin, PD03_DCpowder_IN2_Pin},
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: note: (near initialization for 'PD_DCpowder_Pin[2][2]')
+   87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
+      |                                    ^
+../Core/Inc/main.h:181:31: note: in expansion of macro 'GPIO_PIN_1'
+  181 | #define PD03_DCpowder_IN2_Pin GPIO_PIN_1
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:34:56: note: in expansion of macro 'PD03_DCpowder_IN2_Pin'
+   34 |          {PD03_DCpowder_EN_Pin, PD03_DCpowder_IN1_Pin, PD03_DCpowder_IN2_Pin},
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:94:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   94 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:85:30: note: in expansion of macro 'GPIO_PIN_8'
+   85 | #define PD04_DCpowder_EN_Pin GPIO_PIN_8
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:35:11: note: in expansion of macro 'PD04_DCpowder_EN_Pin'
+   35 |          {PD04_DCpowder_EN_Pin, PD04_DCpowder_IN1_Pin, PD04_DCpowder_IN2_Pin},
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:94:36: note: (near initialization for 'PD_DCpowder_Pin[3][0]')
+   94 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:85:30: note: in expansion of macro 'GPIO_PIN_8'
+   85 | #define PD04_DCpowder_EN_Pin GPIO_PIN_8
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:35:11: note: in expansion of macro 'PD04_DCpowder_EN_Pin'
+   35 |          {PD04_DCpowder_EN_Pin, PD04_DCpowder_IN1_Pin, PD04_DCpowder_IN2_Pin},
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:73:31: note: in expansion of macro 'GPIO_PIN_6'
+   73 | #define PD04_DCpowder_IN1_Pin GPIO_PIN_6
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:35:33: note: in expansion of macro 'PD04_DCpowder_IN1_Pin'
+   35 |          {PD04_DCpowder_EN_Pin, PD04_DCpowder_IN1_Pin, PD04_DCpowder_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: note: (near initialization for 'PD_DCpowder_Pin[3][1]')
+   92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:73:31: note: in expansion of macro 'GPIO_PIN_6'
+   73 | #define PD04_DCpowder_IN1_Pin GPIO_PIN_6
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:35:33: note: in expansion of macro 'PD04_DCpowder_IN1_Pin'
+   35 |          {PD04_DCpowder_EN_Pin, PD04_DCpowder_IN1_Pin, PD04_DCpowder_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:89:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   89 | #define GPIO_PIN_3                 ((uint16_t)0x0008)  /* Pin 3 selected    */
+      |                                    ^
+../Core/Inc/main.h:71:31: note: in expansion of macro 'GPIO_PIN_3'
+   71 | #define PD04_DCpowder_IN2_Pin GPIO_PIN_3
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:35:56: note: in expansion of macro 'PD04_DCpowder_IN2_Pin'
+   35 |          {PD04_DCpowder_EN_Pin, PD04_DCpowder_IN1_Pin, PD04_DCpowder_IN2_Pin},
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:89:36: note: (near initialization for 'PD_DCpowder_Pin[3][2]')
+   89 | #define GPIO_PIN_3                 ((uint16_t)0x0008)  /* Pin 3 selected    */
+      |                                    ^
+../Core/Inc/main.h:71:31: note: in expansion of macro 'GPIO_PIN_3'
+   71 | #define PD04_DCpowder_IN2_Pin GPIO_PIN_3
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:35:56: note: in expansion of macro 'PD04_DCpowder_IN2_Pin'
+   35 |          {PD04_DCpowder_EN_Pin, PD04_DCpowder_IN1_Pin, PD04_DCpowder_IN2_Pin},
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
+      |                                    ^
+../Core/Inc/main.h:127:30: note: in expansion of macro 'GPIO_PIN_1'
+  127 | #define PD05_DCpowder_EN_Pin GPIO_PIN_1
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:36:11: note: in expansion of macro 'PD05_DCpowder_EN_Pin'
+   36 |          {PD05_DCpowder_EN_Pin, PD05_DCpowder_IN1_Pin, PD05_DCpowder_IN2_Pin}};
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:87:36: note: (near initialization for 'PD_DCpowder_Pin[4][0]')
+   87 | #define GPIO_PIN_1                 ((uint16_t)0x0002)  /* Pin 1 selected    */
+      |                                    ^
+../Core/Inc/main.h:127:30: note: in expansion of macro 'GPIO_PIN_1'
+  127 | #define PD05_DCpowder_EN_Pin GPIO_PIN_1
+      |                              ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:36:11: note: in expansion of macro 'PD05_DCpowder_EN_Pin'
+   36 |          {PD05_DCpowder_EN_Pin, PD05_DCpowder_IN1_Pin, PD05_DCpowder_IN2_Pin}};
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:83:31: note: in expansion of macro 'GPIO_PIN_7'
+   83 | #define PD05_DCpowder_IN1_Pin GPIO_PIN_7
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:36:33: note: in expansion of macro 'PD05_DCpowder_IN1_Pin'
+   36 |          {PD05_DCpowder_EN_Pin, PD05_DCpowder_IN1_Pin, PD05_DCpowder_IN2_Pin}};
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: note: (near initialization for 'PD_DCpowder_Pin[4][1]')
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:83:31: note: in expansion of macro 'GPIO_PIN_7'
+   83 | #define PD05_DCpowder_IN1_Pin GPIO_PIN_7
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:36:33: note: in expansion of macro 'PD05_DCpowder_IN1_Pin'
+   36 |          {PD05_DCpowder_EN_Pin, PD05_DCpowder_IN1_Pin, PD05_DCpowder_IN2_Pin}};
+      |                                 ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   95 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
+      |                                    ^
+../Core/Inc/main.h:87:31: note: in expansion of macro 'GPIO_PIN_9'
+   87 | #define PD05_DCpowder_IN2_Pin GPIO_PIN_9
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:36:56: note: in expansion of macro 'PD05_DCpowder_IN2_Pin'
+   36 |          {PD05_DCpowder_EN_Pin, PD05_DCpowder_IN1_Pin, PD05_DCpowder_IN2_Pin}};
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: note: (near initialization for 'PD_DCpowder_Pin[4][2]')
+   95 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
+      |                                    ^
+../Core/Inc/main.h:87:31: note: in expansion of macro 'GPIO_PIN_9'
+   87 | #define PD05_DCpowder_IN2_Pin GPIO_PIN_9
+      |                               ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:36:56: note: in expansion of macro 'PD05_DCpowder_IN2_Pin'
+   36 |          {PD05_DCpowder_EN_Pin, PD05_DCpowder_IN1_Pin, PD05_DCpowder_IN2_Pin}};
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:161:27: note: in expansion of macro 'GPIO_PIN_13'
+  161 | #define PD01_DCmix_EN_Pin GPIO_PIN_13
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:38:33: note: in expansion of macro 'PD01_DCmix_EN_Pin'
+   38 | uint16_t* PD_DCmix_Pin[][3] = {{PD01_DCmix_EN_Pin, PD01_DCmix_IN1_Pin, PD01_DCmix_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: note: (near initialization for 'PD_DCmix_Pin[0][0]')
+   99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:161:27: note: in expansion of macro 'GPIO_PIN_13'
+  161 | #define PD01_DCmix_EN_Pin GPIO_PIN_13
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:38:33: note: in expansion of macro 'PD01_DCmix_EN_Pin'
+   38 | uint16_t* PD_DCmix_Pin[][3] = {{PD01_DCmix_EN_Pin, PD01_DCmix_IN1_Pin, PD01_DCmix_IN2_Pin},
+      |                                 ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:94:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   94 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:131:28: note: in expansion of macro 'GPIO_PIN_8'
+  131 | #define PD01_DCmix_IN1_Pin GPIO_PIN_8
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:38:52: note: in expansion of macro 'PD01_DCmix_IN1_Pin'
+   38 | uint16_t* PD_DCmix_Pin[][3] = {{PD01_DCmix_EN_Pin, PD01_DCmix_IN1_Pin, PD01_DCmix_IN2_Pin},
+      |                                                    ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:94:36: note: (near initialization for 'PD_DCmix_Pin[0][1]')
+   94 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:131:28: note: in expansion of macro 'GPIO_PIN_8'
+  131 | #define PD01_DCmix_IN1_Pin GPIO_PIN_8
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:38:52: note: in expansion of macro 'PD01_DCmix_IN1_Pin'
+   38 | uint16_t* PD_DCmix_Pin[][3] = {{PD01_DCmix_EN_Pin, PD01_DCmix_IN1_Pin, PD01_DCmix_IN2_Pin},
+      |                                                    ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:129:28: note: in expansion of macro 'GPIO_PIN_7'
+  129 | #define PD01_DCmix_IN2_Pin GPIO_PIN_7
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:38:72: note: in expansion of macro 'PD01_DCmix_IN2_Pin'
+   38 | uint16_t* PD_DCmix_Pin[][3] = {{PD01_DCmix_EN_Pin, PD01_DCmix_IN1_Pin, PD01_DCmix_IN2_Pin},
+      |                                                                        ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: note: (near initialization for 'PD_DCmix_Pin[0][2]')
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:129:28: note: in expansion of macro 'GPIO_PIN_7'
+  129 | #define PD01_DCmix_IN2_Pin GPIO_PIN_7
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:38:72: note: in expansion of macro 'PD01_DCmix_IN2_Pin'
+   38 | uint16_t* PD_DCmix_Pin[][3] = {{PD01_DCmix_EN_Pin, PD01_DCmix_IN1_Pin, PD01_DCmix_IN2_Pin},
+      |                                                                        ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:88:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   88 | #define GPIO_PIN_2                 ((uint16_t)0x0004)  /* Pin 2 selected    */
+      |                                    ^
+../Core/Inc/main.h:69:27: note: in expansion of macro 'GPIO_PIN_2'
+   69 | #define PD02_DCmix_EN_Pin GPIO_PIN_2
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:39:10: note: in expansion of macro 'PD02_DCmix_EN_Pin'
+   39 |         {PD02_DCmix_EN_Pin, PD02_DCmix_IN1_Pin, PD02_DCmix_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:88:36: note: (near initialization for 'PD_DCmix_Pin[1][0]')
+   88 | #define GPIO_PIN_2                 ((uint16_t)0x0004)  /* Pin 2 selected    */
+      |                                    ^
+../Core/Inc/main.h:69:27: note: in expansion of macro 'GPIO_PIN_2'
+   69 | #define PD02_DCmix_EN_Pin GPIO_PIN_2
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:39:10: note: in expansion of macro 'PD02_DCmix_EN_Pin'
+   39 |         {PD02_DCmix_EN_Pin, PD02_DCmix_IN1_Pin, PD02_DCmix_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/croutine.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/croutine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/croutine.o"
+      |                                    ^
+../Core/Inc/main.h:159:28: note: in expansion of macro 'GPIO_PIN_12'
+  159 | #define PD02_DCmix_IN1_Pin GPIO_PIN_12
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:39:29: note: in expansion of macro 'PD02_DCmix_IN1_Pin'
+   39 |         {PD02_DCmix_EN_Pin, PD02_DCmix_IN1_Pin, PD02_DCmix_IN2_Pin},
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: note: (near initialization for 'PD_DCmix_Pin[1][1]')
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:159:28: note: in expansion of macro 'GPIO_PIN_12'
+  159 | #define PD02_DCmix_IN1_Pin GPIO_PIN_12
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:39:29: note: in expansion of macro 'PD02_DCmix_IN1_Pin'
+   39 |         {PD02_DCmix_EN_Pin, PD02_DCmix_IN1_Pin, PD02_DCmix_IN2_Pin},
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:97:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   97 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:157:28: note: in expansion of macro 'GPIO_PIN_11'
+  157 | #define PD02_DCmix_IN2_Pin GPIO_PIN_11
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:39:49: note: in expansion of macro 'PD02_DCmix_IN2_Pin'
+   39 |         {PD02_DCmix_EN_Pin, PD02_DCmix_IN1_Pin, PD02_DCmix_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:97:36: note: (near initialization for 'PD_DCmix_Pin[1][2]')
+   97 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:157:28: note: in expansion of macro 'GPIO_PIN_11'
+  157 | #define PD02_DCmix_IN2_Pin GPIO_PIN_11
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:39:49: note: in expansion of macro 'PD02_DCmix_IN2_Pin'
+   39 |         {PD02_DCmix_EN_Pin, PD02_DCmix_IN1_Pin, PD02_DCmix_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  100 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:143:27: note: in expansion of macro 'GPIO_PIN_14'
+  143 | #define PD03_DCmix_EN_Pin GPIO_PIN_14
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:40:10: note: in expansion of macro 'PD03_DCmix_EN_Pin'
+   40 |         {PD03_DCmix_EN_Pin, PD03_DCmix_IN1_Pin, PD03_DCmix_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: note: (near initialization for 'PD_DCmix_Pin[2][0]')
+  100 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:143:27: note: in expansion of macro 'GPIO_PIN_14'
+  143 | #define PD03_DCmix_EN_Pin GPIO_PIN_14
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:40:10: note: in expansion of macro 'PD03_DCmix_EN_Pin'
+   40 |         {PD03_DCmix_EN_Pin, PD03_DCmix_IN1_Pin, PD03_DCmix_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:96:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   96 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:135:28: note: in expansion of macro 'GPIO_PIN_10'
+  135 | #define PD03_DCmix_IN1_Pin GPIO_PIN_10
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:40:29: note: in expansion of macro 'PD03_DCmix_IN1_Pin'
+   40 |         {PD03_DCmix_EN_Pin, PD03_DCmix_IN1_Pin, PD03_DCmix_IN2_Pin},
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:96:36: note: (near initialization for 'PD_DCmix_Pin[2][1]')
+   96 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:135:28: note: in expansion of macro 'GPIO_PIN_10'
+  135 | #define PD03_DCmix_IN1_Pin GPIO_PIN_10
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:40:29: note: in expansion of macro 'PD03_DCmix_IN1_Pin'
+   40 |         {PD03_DCmix_EN_Pin, PD03_DCmix_IN1_Pin, PD03_DCmix_IN2_Pin},
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:139:28: note: in expansion of macro 'GPIO_PIN_12'
+  139 | #define PD03_DCmix_IN2_Pin GPIO_PIN_12
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:40:49: note: in expansion of macro 'PD03_DCmix_IN2_Pin'
+   40 |         {PD03_DCmix_EN_Pin, PD03_DCmix_IN1_Pin, PD03_DCmix_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: note: (near initialization for 'PD_DCmix_Pin[2][2]')
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:139:28: note: in expansion of macro 'GPIO_PIN_12'
+  139 | #define PD03_DCmix_IN2_Pin GPIO_PIN_12
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:40:49: note: in expansion of macro 'PD03_DCmix_IN2_Pin'
+   40 |         {PD03_DCmix_EN_Pin, PD03_DCmix_IN1_Pin, PD03_DCmix_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:207:27: note: in expansion of macro 'GPIO_PIN_0'
+  207 | #define PD04_DCmix_EN_Pin GPIO_PIN_0
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:41:10: note: in expansion of macro 'PD04_DCmix_EN_Pin'
+   41 |         {PD04_DCmix_EN_Pin, PD04_DCmix_IN1_Pin, PD04_DCmix_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: note: (near initialization for 'PD_DCmix_Pin[3][0]')
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:207:27: note: in expansion of macro 'GPIO_PIN_0'
+  207 | #define PD04_DCmix_EN_Pin GPIO_PIN_0
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:41:10: note: in expansion of macro 'PD04_DCmix_EN_Pin'
+   41 |         {PD04_DCmix_EN_Pin, PD04_DCmix_IN1_Pin, PD04_DCmix_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:101:28: note: in expansion of macro 'GPIO_PIN_0'
+  101 | #define PD04_DCmix_IN1_Pin GPIO_PIN_0
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:41:29: note: in expansion of macro 'PD04_DCmix_IN1_Pin'
+   41 |         {PD04_DCmix_EN_Pin, PD04_DCmix_IN1_Pin, PD04_DCmix_IN2_Pin},
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: note: (near initialization for 'PD_DCmix_Pin[3][1]')
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:101:28: note: in expansion of macro 'GPIO_PIN_0'
+  101 | #define PD04_DCmix_IN1_Pin GPIO_PIN_0
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:41:29: note: in expansion of macro 'PD04_DCmix_IN1_Pin'
+   41 |         {PD04_DCmix_EN_Pin, PD04_DCmix_IN1_Pin, PD04_DCmix_IN2_Pin},
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:113:28: note: in expansion of macro 'GPIO_PIN_0'
+  113 | #define PD04_DCmix_IN2_Pin GPIO_PIN_0
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:41:49: note: in expansion of macro 'PD04_DCmix_IN2_Pin'
+   41 |         {PD04_DCmix_EN_Pin, PD04_DCmix_IN1_Pin, PD04_DCmix_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:86:36: note: (near initialization for 'PD_DCmix_Pin[3][2]')
+   86 | #define GPIO_PIN_0                 ((uint16_t)0x0001)  /* Pin 0 selected    */
+      |                                    ^
+../Core/Inc/main.h:113:28: note: in expansion of macro 'GPIO_PIN_0'
+  113 | #define PD04_DCmix_IN2_Pin GPIO_PIN_0
+      |                            ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:41:49: note: in expansion of macro 'PD04_DCmix_IN2_Pin'
+   41 |         {PD04_DCmix_EN_Pin, PD04_DCmix_IN1_Pin, PD04_DCmix_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:97:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   97 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:149:27: note: in expansion of macro 'GPIO_PIN_11'
+  149 | #define PD05_DCmix_EN_Pin GPIO_PIN_11
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:42:10: note: in expansion of macro 'PD05_DCmix_EN_Pin'
+   42 |         {PD05_DCmix_EN_Pin, PD05_DCmix_IN1_Pin, PD05_DCmix_IN2_Pin}};
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:97:36: note: (near initialization for 'PD_DCmix_Pin[4][0]')
+   97 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:149:27: note: in expansion of macro 'GPIO_PIN_11'
+  149 | #define PD05_DCmix_EN_Pin GPIO_PIN_11
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:42:10: note: in expansion of macro 'PD05_DCmix_EN_Pin'
+   42 |         {PD05_DCmix_EN_Pin, PD05_DCmix_IN1_Pin, PD05_DCmix_IN2_Pin}};
+      |          ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:145:28: note: in expansion of macro 'GPIO_PIN_15'
+  145 | #define PD05_DCmix_IN1_Pin GPIO_PIN_15
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:42:29: note: in expansion of macro 'PD05_DCmix_IN1_Pin'
+   42 |         {PD05_DCmix_EN_Pin, PD05_DCmix_IN1_Pin, PD05_DCmix_IN2_Pin}};
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: note: (near initialization for 'PD_DCmix_Pin[4][1]')
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:145:28: note: in expansion of macro 'GPIO_PIN_15'
+  145 | #define PD05_DCmix_IN1_Pin GPIO_PIN_15
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:42:29: note: in expansion of macro 'PD05_DCmix_IN1_Pin'
+   42 |         {PD05_DCmix_EN_Pin, PD05_DCmix_IN1_Pin, PD05_DCmix_IN2_Pin}};
+      |                             ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:96:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   96 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:147:28: note: in expansion of macro 'GPIO_PIN_10'
+  147 | #define PD05_DCmix_IN2_Pin GPIO_PIN_10
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:42:49: note: in expansion of macro 'PD05_DCmix_IN2_Pin'
+   42 |         {PD05_DCmix_EN_Pin, PD05_DCmix_IN1_Pin, PD05_DCmix_IN2_Pin}};
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:96:36: note: (near initialization for 'PD_DCmix_Pin[4][2]')
+   96 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:147:28: note: in expansion of macro 'GPIO_PIN_10'
+  147 | #define PD05_DCmix_IN2_Pin GPIO_PIN_10
+      |                            ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:42:49: note: in expansion of macro 'PD05_DCmix_IN2_Pin'
+   42 |         {PD05_DCmix_EN_Pin, PD05_DCmix_IN1_Pin, PD05_DCmix_IN2_Pin}};
+      |                                                 ^~~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:94:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   94 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:203:26: note: in expansion of macro 'GPIO_PIN_8'
+  203 | #define PD01_heat_EN_Pin GPIO_PIN_8
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:44:31: note: in expansion of macro 'PD01_heat_EN_Pin'
+   44 | uint16_t* heat_Pin[][3] =   {{PD01_heat_EN_Pin, PD01_heat_IN1_Pin, PD01_heat_IN2_Pin},
+      |                               ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:94:36: note: (near initialization for 'heat_Pin[0][0]')
+   94 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:203:26: note: in expansion of macro 'GPIO_PIN_8'
+  203 | #define PD01_heat_EN_Pin GPIO_PIN_8
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:44:31: note: in expansion of macro 'PD01_heat_EN_Pin'
+   44 | uint16_t* heat_Pin[][3] =   {{PD01_heat_EN_Pin, PD01_heat_IN1_Pin, PD01_heat_IN2_Pin},
+      |                               ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:167:27: note: in expansion of macro 'GPIO_PIN_6'
+  167 | #define PD01_heat_IN1_Pin GPIO_PIN_6
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:44:49: note: in expansion of macro 'PD01_heat_IN1_Pin'
+   44 | uint16_t* heat_Pin[][3] =   {{PD01_heat_EN_Pin, PD01_heat_IN1_Pin, PD01_heat_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: note: (near initialization for 'heat_Pin[0][1]')
+   92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:167:27: note: in expansion of macro 'GPIO_PIN_6'
+  167 | #define PD01_heat_IN1_Pin GPIO_PIN_6
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:44:49: note: in expansion of macro 'PD01_heat_IN1_Pin'
+   44 | uint16_t* heat_Pin[][3] =   {{PD01_heat_EN_Pin, PD01_heat_IN1_Pin, PD01_heat_IN2_Pin},
+      |                                                 ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:155:27: note: in expansion of macro 'GPIO_PIN_15'
+  155 | #define PD01_heat_IN2_Pin GPIO_PIN_15
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:44:68: note: in expansion of macro 'PD01_heat_IN2_Pin'
+   44 | uint16_t* heat_Pin[][3] =   {{PD01_heat_EN_Pin, PD01_heat_IN1_Pin, PD01_heat_IN2_Pin},
+      |                                                                    ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: note: (near initialization for 'heat_Pin[0][2]')
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:155:27: note: in expansion of macro 'GPIO_PIN_15'
+  155 | #define PD01_heat_IN2_Pin GPIO_PIN_15
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:44:68: note: in expansion of macro 'PD01_heat_IN2_Pin'
+   44 | uint16_t* heat_Pin[][3] =   {{PD01_heat_EN_Pin, PD01_heat_IN1_Pin, PD01_heat_IN2_Pin},
+      |                                                                    ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   95 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
+      |                                    ^
+../Core/Inc/main.h:205:26: note: in expansion of macro 'GPIO_PIN_9'
+  205 | #define PD02_heat_EN_Pin GPIO_PIN_9
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:45:10: note: in expansion of macro 'PD02_heat_EN_Pin'
+   45 |         {PD02_heat_EN_Pin, PD02_heat_IN1_Pin, PD02_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:95:36: note: (near initialization for 'heat_Pin[1][0]')
+   95 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
+      |                                    ^
+../Core/Inc/main.h:205:26: note: in expansion of macro 'GPIO_PIN_9'
+  205 | #define PD02_heat_EN_Pin GPIO_PIN_9
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:45:10: note: in expansion of macro 'PD02_heat_EN_Pin'
+   45 |         {PD02_heat_EN_Pin, PD02_heat_IN1_Pin, PD02_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:153:27: note: in expansion of macro 'GPIO_PIN_13'
+  153 | #define PD02_heat_IN1_Pin GPIO_PIN_13
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:45:28: note: in expansion of macro 'PD02_heat_IN1_Pin'
+   45 |         {PD02_heat_EN_Pin, PD02_heat_IN1_Pin, PD02_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:99:36: note: (near initialization for 'heat_Pin[1][1]')
+   99 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:153:27: note: in expansion of macro 'GPIO_PIN_13'
+  153 | #define PD02_heat_IN1_Pin GPIO_PIN_13
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:45:28: note: in expansion of macro 'PD02_heat_IN1_Pin'
+   45 |         {PD02_heat_EN_Pin, PD02_heat_IN1_Pin, PD02_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:151:27: note: in expansion of macro 'GPIO_PIN_12'
+  151 | #define PD02_heat_IN2_Pin GPIO_PIN_12
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:45:47: note: in expansion of macro 'PD02_heat_IN2_Pin'
+   45 |         {PD02_heat_EN_Pin, PD02_heat_IN1_Pin, PD02_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: note: (near initialization for 'heat_Pin[1][2]')
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:151:27: note: in expansion of macro 'GPIO_PIN_12'
+  151 | #define PD02_heat_IN2_Pin GPIO_PIN_12
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:45:47: note: in expansion of macro 'PD02_heat_IN2_Pin'
+   45 |         {PD02_heat_EN_Pin, PD02_heat_IN1_Pin, PD02_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:171:26: note: in expansion of macro 'GPIO_PIN_15'
+  171 | #define PD03_heat_EN_Pin GPIO_PIN_15
+      |                          ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:46:10: note: in expansion of macro 'PD03_heat_EN_Pin'
+   46 |         {PD03_heat_EN_Pin, PD03_heat_IN1_Pin, PD03_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: note: (near initialization for 'heat_Pin[2][0]')
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:171:26: note: in expansion of macro 'GPIO_PIN_15'
+  171 | #define PD03_heat_EN_Pin GPIO_PIN_15
+      |                          ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:46:10: note: in expansion of macro 'PD03_heat_EN_Pin'
+   46 |         {PD03_heat_EN_Pin, PD03_heat_IN1_Pin, PD03_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:91:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   91 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:107:27: note: in expansion of macro 'GPIO_PIN_5'
+  107 | #define PD03_heat_IN1_Pin GPIO_PIN_5
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:46:28: note: in expansion of macro 'PD03_heat_IN1_Pin'
+   46 |         {PD03_heat_EN_Pin, PD03_heat_IN1_Pin, PD03_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:91:36: note: (near initialization for 'heat_Pin[2][1]')
+   91 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:107:27: note: in expansion of macro 'GPIO_PIN_5'
+  107 | #define PD03_heat_IN1_Pin GPIO_PIN_5
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:46:28: note: in expansion of macro 'PD03_heat_IN1_Pin'
+   46 |         {PD03_heat_EN_Pin, PD03_heat_IN1_Pin, PD03_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:109:27: note: in expansion of macro 'GPIO_PIN_6'
+  109 | #define PD03_heat_IN2_Pin GPIO_PIN_6
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:46:47: note: in expansion of macro 'PD03_heat_IN2_Pin'
+   46 |         {PD03_heat_EN_Pin, PD03_heat_IN1_Pin, PD03_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:92:36: note: (near initialization for 'heat_Pin[2][2]')
+   92 | #define GPIO_PIN_6                 ((uint16_t)0x0040)  /* Pin 6 selected    */
+      |                                    ^
+../Core/Inc/main.h:109:27: note: in expansion of macro 'GPIO_PIN_6'
+  109 | #define PD03_heat_IN2_Pin GPIO_PIN_6
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:46:47: note: in expansion of macro 'PD03_heat_IN2_Pin'
+   46 |         {PD03_heat_EN_Pin, PD03_heat_IN1_Pin, PD03_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:169:26: note: in expansion of macro 'GPIO_PIN_7'
+  169 | #define PD04_heat_EN_Pin GPIO_PIN_7
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:47:10: note: in expansion of macro 'PD04_heat_EN_Pin'
+   47 |         {PD04_heat_EN_Pin, PD04_heat_IN1_Pin, PD04_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: note: (near initialization for 'heat_Pin[3][0]')
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:169:26: note: in expansion of macro 'GPIO_PIN_7'
+  169 | #define PD04_heat_EN_Pin GPIO_PIN_7
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:47:10: note: in expansion of macro 'PD04_heat_EN_Pin'
+   47 |         {PD04_heat_EN_Pin, PD04_heat_IN1_Pin, PD04_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:91:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   91 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:199:27: note: in expansion of macro 'GPIO_PIN_5'
+  199 | #define PD04_heat_IN1_Pin GPIO_PIN_5
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:47:28: note: in expansion of macro 'PD04_heat_IN1_Pin'
+   47 |         {PD04_heat_EN_Pin, PD04_heat_IN1_Pin, PD04_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:91:36: note: (near initialization for 'heat_Pin[3][1]')
+   91 | #define GPIO_PIN_5                 ((uint16_t)0x0020)  /* Pin 5 selected    */
+      |                                    ^
+../Core/Inc/main.h:199:27: note: in expansion of macro 'GPIO_PIN_5'
+  199 | #define PD04_heat_IN1_Pin GPIO_PIN_5
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:47:28: note: in expansion of macro 'PD04_heat_IN1_Pin'
+   47 |         {PD04_heat_EN_Pin, PD04_heat_IN1_Pin, PD04_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:111:27: note: in expansion of macro 'GPIO_PIN_7'
+  111 | #define PD04_heat_IN2_Pin GPIO_PIN_7
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:47:47: note: in expansion of macro 'PD04_heat_IN2_Pin'
+   47 |         {PD04_heat_EN_Pin, PD04_heat_IN1_Pin, PD04_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:93:36: note: (near initialization for 'heat_Pin[3][2]')
+   93 | #define GPIO_PIN_7                 ((uint16_t)0x0080)  /* Pin 7 selected    */
+      |                                    ^
+../Core/Inc/main.h:111:27: note: in expansion of macro 'GPIO_PIN_7'
+  111 | #define PD04_heat_IN2_Pin GPIO_PIN_7
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:47:47: note: in expansion of macro 'PD04_heat_IN2_Pin'
+   47 |         {PD04_heat_EN_Pin, PD04_heat_IN1_Pin, PD04_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:89:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   89 | #define GPIO_PIN_3                 ((uint16_t)0x0008)  /* Pin 3 selected    */
+      |                                    ^
+../Core/Inc/main.h:195:26: note: in expansion of macro 'GPIO_PIN_3'
+  195 | #define PD05_heat_EN_Pin GPIO_PIN_3
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:48:10: note: in expansion of macro 'PD05_heat_EN_Pin'
+   48 |         {PD05_heat_EN_Pin, PD05_heat_IN1_Pin, PD05_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:89:36: note: (near initialization for 'heat_Pin[4][0]')
+   89 | #define GPIO_PIN_3                 ((uint16_t)0x0008)  /* Pin 3 selected    */
+      |                                    ^
+../Core/Inc/main.h:195:26: note: in expansion of macro 'GPIO_PIN_3'
+  195 | #define PD05_heat_EN_Pin GPIO_PIN_3
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:48:10: note: in expansion of macro 'PD05_heat_EN_Pin'
+   48 |         {PD05_heat_EN_Pin, PD05_heat_IN1_Pin, PD05_heat_IN2_Pin},
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  100 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:163:27: note: in expansion of macro 'GPIO_PIN_14'
+  163 | #define PD05_heat_IN1_Pin GPIO_PIN_14
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:48:28: note: in expansion of macro 'PD05_heat_IN1_Pin'
+   48 |         {PD05_heat_EN_Pin, PD05_heat_IN1_Pin, PD05_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: note: (near initialization for 'heat_Pin[4][1]')
+  100 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:163:27: note: in expansion of macro 'GPIO_PIN_14'
+  163 | #define PD05_heat_IN1_Pin GPIO_PIN_14
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:48:28: note: in expansion of macro 'PD05_heat_IN1_Pin'
+   48 |         {PD05_heat_EN_Pin, PD05_heat_IN1_Pin, PD05_heat_IN2_Pin},
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:165:27: note: in expansion of macro 'GPIO_PIN_15'
+  165 | #define PD05_heat_IN2_Pin GPIO_PIN_15
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:48:47: note: in expansion of macro 'PD05_heat_IN2_Pin'
+   48 |         {PD05_heat_EN_Pin, PD05_heat_IN1_Pin, PD05_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:101:36: note: (near initialization for 'heat_Pin[4][2]')
+  101 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:165:27: note: in expansion of macro 'GPIO_PIN_15'
+  165 | #define PD05_heat_IN2_Pin GPIO_PIN_15
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:48:47: note: in expansion of macro 'PD05_heat_IN2_Pin'
+   48 |         {PD05_heat_EN_Pin, PD05_heat_IN1_Pin, PD05_heat_IN2_Pin},
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:90:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   90 | #define GPIO_PIN_4                 ((uint16_t)0x0010)  /* Pin 4 selected    */
+      |                                    ^
+../Core/Inc/main.h:197:26: note: in expansion of macro 'GPIO_PIN_4'
+  197 | #define CF01_heat_EN_Pin GPIO_PIN_4
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:49:10: note: in expansion of macro 'CF01_heat_EN_Pin'
+   49 |         {CF01_heat_EN_Pin, CF01_heat_IN1_Pin, CF01_heat_IN2_Pin}};
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:90:36: note: (near initialization for 'heat_Pin[5][0]')
+   90 | #define GPIO_PIN_4                 ((uint16_t)0x0010)  /* Pin 4 selected    */
+      |                                    ^
+../Core/Inc/main.h:197:26: note: in expansion of macro 'GPIO_PIN_4'
+  197 | #define CF01_heat_EN_Pin GPIO_PIN_4
+      |                          ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:49:10: note: in expansion of macro 'CF01_heat_EN_Pin'
+   49 |         {CF01_heat_EN_Pin, CF01_heat_IN1_Pin, CF01_heat_IN2_Pin}};
+      |          ^~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:90:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   90 | #define GPIO_PIN_4                 ((uint16_t)0x0010)  /* Pin 4 selected    */
+      |                                    ^
+../Core/Inc/main.h:105:27: note: in expansion of macro 'GPIO_PIN_4'
+  105 | #define CF01_heat_IN1_Pin GPIO_PIN_4
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:49:28: note: in expansion of macro 'CF01_heat_IN1_Pin'
+   49 |         {CF01_heat_EN_Pin, CF01_heat_IN1_Pin, CF01_heat_IN2_Pin}};
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:90:36: note: (near initialization for 'heat_Pin[5][1]')
+   90 | #define GPIO_PIN_4                 ((uint16_t)0x0010)  /* Pin 4 selected    */
+      |                                    ^
+../Core/Inc/main.h:105:27: note: in expansion of macro 'GPIO_PIN_4'
+  105 | #define CF01_heat_IN1_Pin GPIO_PIN_4
+      |                           ^~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:49:28: note: in expansion of macro 'CF01_heat_IN1_Pin'
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/event_groups.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/event_groups.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/event_groups.o"
+   49 |         {CF01_heat_EN_Pin, CF01_heat_IN1_Pin, CF01_heat_IN2_Pin}};
+      |                            ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:117:27: note: in expansion of macro 'GPIO_PIN_12'
+  117 | #define CF01_heat_IN2_Pin GPIO_PIN_12
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:49:47: note: in expansion of macro 'CF01_heat_IN2_Pin'
+   49 |         {CF01_heat_EN_Pin, CF01_heat_IN1_Pin, CF01_heat_IN2_Pin}};
+      |                                               ^~~~~~~~~~~~~~~~~
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:98:36: note: (near initialization for 'heat_Pin[5][2]')
+   98 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:117:27: note: in expansion of macro 'GPIO_PIN_12'
+  117 | #define CF01_heat_IN2_Pin GPIO_PIN_12
+      |                           ^~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:49:47: note: in expansion of macro 'CF01_heat_IN2_Pin'
+   49 |         {CF01_heat_EN_Pin, CF01_heat_IN1_Pin, CF01_heat_IN2_Pin}};
+      |                                               ^~~~~~~~~~~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'init_powderMachine':
+../XEstation_Library/Src/User_BeverageManufacturing.c:57:70: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   57 |   HAL_GPIO_WritePin(PD_DCpowder_GPIO_Port[i][IN1], PD_DCpowder_Pin[i][IN1], GPIO_PIN_RESET);
+      |                                                    ~~~~~~~~~~~~~~~~~~^~~~~
+      |                                                                      |
+      |                                                                      uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:58:70: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   58 |   HAL_GPIO_WritePin(PD_DCpowder_GPIO_Port[i][IN2], PD_DCpowder_Pin[i][IN2], GPIO_PIN_SET);
+      |                                                    ~~~~~~~~~~~~~~~~~~^~~~~
+      |                                                                      |
+      |                                                                      uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:59:69: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   59 |   HAL_GPIO_WritePin(PD_DCpowder_GPIO_Port[i][EN], PD_DCpowder_Pin[i][EN], GPIO_PIN_RESET);
+      |                                                   ~~~~~~~~~~~~~~~~~~^~~~
+      |                                                                     |
+      |                                                                     uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:64:64: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   64 |   HAL_GPIO_WritePin(PD_DCmix_GPIO_Port[i][IN1], PD_DCmix_Pin[i][IN1], GPIO_PIN_SET);
+      |                                                 ~~~~~~~~~~~~~~~^~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:65:64: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   65 |   HAL_GPIO_WritePin(PD_DCmix_GPIO_Port[i][IN2], PD_DCmix_Pin[i][IN2], GPIO_PIN_RESET);
+      |                                                 ~~~~~~~~~~~~~~~^~~~~
+      |                                                                |
+      |                                                                uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:66:63: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   66 |   HAL_GPIO_WritePin(PD_DCmix_GPIO_Port[i][EN], PD_DCmix_Pin[i][EN], GPIO_PIN_RESET);
+      |                                                ~~~~~~~~~~~~~~~^~~~
+      |                                                               |
+      |                                                               uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:71:56: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   71 |   HAL_GPIO_WritePin(heat_GPIO_Port[i][IN1], heat_Pin[i][IN1], GPIO_PIN_SET);
+      |                                             ~~~~~~~~~~~^~~~~
+      |                                                        |
+      |                                                        uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:72:56: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+   72 |   HAL_GPIO_WritePin(heat_GPIO_Port[i][IN2], heat_Pin[i][IN2], GPIO_PIN_RESET);
+      |                                             ~~~~~~~~~~~^~~~~
+      |                                                        |
+      |                                                        uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'MalchaTest':
+../XEstation_Library/Src/User_BeverageManufacturing.c:97:2: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   97 |  printf("\n\n===waiting ... [%d mg ][%d sec]===\n", hot_water_amout, water_exit_time);
+      |  ^~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:97:2: warning: incompatible implicit declaration of built-in function 'printf'
+../XEstation_Library/Src/User_BeverageManufacturing.c:8:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    7 | #include "User_beverageManufacturing.h"
+  +++ |+#include <stdio.h>
+    8 | 
+../XEstation_Library/Src/User_BeverageManufacturing.c:97:31: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   97 |  printf("\n\n===waiting ... [%d mg ][%d sec]===\n", hot_water_amout, water_exit_time);
+      |                              ~^                     ~~~~~~~~~~~~~~~
+      |                               |                     |
+      |                               int                   uint32_t {aka long unsigned int}
+      |                              %ld
+../XEstation_Library/Src/User_BeverageManufacturing.c:99:59: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   99 |  printf("\n\nwater_exit_time : %d sec, hot_water_amout : %d mg\n", water_exit_time, hot_water_amout);
+      |                                                          ~^                         ~~~~~~~~~~~~~~~
+      |                                                           |                         |
+      |                                                           int                       uint32_t {aka long unsigned int}
+      |                                                          %ld
+../XEstation_Library/Src/User_BeverageManufacturing.c:112:68: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  112 |  HAL_GPIO_WritePin(PD_DCpowder_GPIO_Port[0][EN], PD_DCpowder_Pin[0][EN], GPIO_PIN_SET);
+      |                                                  ~~~~~~~~~~~~~~~~~~^~~~
+      |                                                                    |
+      |                                                                    uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:113:62: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  113 |  HAL_GPIO_WritePin(PD_DCmix_GPIO_Port[0][EN], PD_DCmix_Pin[0][EN], GPIO_PIN_SET);
+      |                                               ~~~~~~~~~~~~~~~^~~~
+      |                                                              |
+      |                                                              uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:117:68: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  117 |  HAL_GPIO_WritePin(PD_DCpowder_GPIO_Port[0][EN], PD_DCpowder_Pin[0][EN], GPIO_PIN_RESET);
+      |                                                  ~~~~~~~~~~~~~~~~~~^~~~
+      |                                                                    |
+      |                                                                    uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:118:62: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  118 |  HAL_GPIO_WritePin(PD_DCmix_GPIO_Port[0][EN], PD_DCmix_Pin[0][EN], GPIO_PIN_RESET);
+      |                                               ~~~~~~~~~~~~~~~^~~~
+      |                                                              |
+      |                                                              uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'motorShutdownAll_powderMachine':
+../XEstation_Library/Src/User_BeverageManufacturing.c:127:69: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  127 |   HAL_GPIO_WritePin(PD_DCpowder_GPIO_Port[i][EN], PD_DCpowder_Pin[i][EN], GPIO_PIN_RESET);
+      |                                                   ~~~~~~~~~~~~~~~~~~^~~~
+      |                                                                     |
+      |                                                                     uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:130:63: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  130 |   HAL_GPIO_WritePin(PD_DCmix_GPIO_Port[i][EN], PD_DCmix_Pin[i][EN], GPIO_PIN_RESET);
+      |                                                ~~~~~~~~~~~~~~~^~~~
+      |                                                               |
+      |                                                               uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:133:55: warning: passing argument 2 of 'HAL_GPIO_WritePin' makes integer from pointer without a cast [-Wint-conversion]
+  133 |   HAL_GPIO_WritePin(heat_GPIO_Port[i][EN], heat_Pin[i][EN], GPIO_PIN_RESET);
+      |                                            ~~~~~~~~~~~^~~~
+      |                                                       |
+      |                                                       uint16_t * {aka short unsigned int *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:11,
+                 from ../XEstation_Library/Src/User_BeverageManufacturing.c:7:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:236:54: note: expected 'uint16_t' {aka 'short unsigned int'} but argument is of type 'uint16_t *' {aka 'short unsigned int *'}
+  236 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |                                             ~~~~~~~~~^~~~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'heaterTest':
+../XEstation_Library/Src/User_BeverageManufacturing.c:173:2: warning: incompatible implicit declaration of built-in function 'printf'
+  173 |  printf("water exit finished!\n");
+      |  ^~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:173:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'L298Ntest':
+../XEstation_Library/Src/User_BeverageManufacturing.c:187:2: warning: incompatible implicit declaration of built-in function 'printf'
+  187 |  printf("off\n\n");
+      |  ^~~~~~
+../XEstation_Library/Src/User_BeverageManufacturing.c:187:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'motorShutdownAll_powderMachine':
+../XEstation_Library/Src/User_BeverageManufacturing.c:142:1: warning: control reaches end of non-void function [-Wreturn-type]
+  142 | }
+      | ^
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'getStatus_powderMachine':
+../XEstation_Library/Src/User_BeverageManufacturing.c:147:1: warning: control reaches end of non-void function [-Wreturn-type]
+  147 | }
+      | ^
+../XEstation_Library/Src/User_BeverageManufacturing.c: In function 'make_Beverage':
+../XEstation_Library/Src/User_BeverageManufacturing.c:164:1: warning: control reaches end of non-void function [-Wreturn-type]
+  164 | }
+      | ^
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
                  from ../Core/Inc/main.h:31,
@@ -58,6 +1174,7 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
   137 | #define CupD_DIR_Pin GPIO_PIN_11
       |                      ^~~~~~~~~~~
 ../XEstation_Library/Src/User_CupLidDispenser.c:29:75: note: in expansion of macro 'CupD_DIR_Pin'
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/list.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/list.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/list.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/list.o"
    29 | uint16_t*   SteppingMotor_Pin[OFFSET][3] =   {{CupD_EN_Pin, CupD_STP_Pin, CupD_DIR_Pin},
       |                                                                           ^~~~~~~~~~~~
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:100:36: warning: initialization of 'uint16_t *' {aka 'short unsigned int *'} from 'short unsigned int' makes pointer from integer without a cast [-Wint-conversion]
@@ -338,20 +1455,79 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:278,
 ../XEstation_Library/Src/User_CupLidDispenser.c:171:1: warning: control reaches end of non-void function [-Wreturn-type]
   171 | }
       | ^
+../XEstation_Library/Src/User_IceDispenser.c: In function 'iceDispenser_SetMode':
+../XEstation_Library/Src/User_IceDispenser.c:39:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   39 |   printf("mode : water\n");
+      |   ^~~~~~
+../XEstation_Library/Src/User_IceDispenser.c:39:3: warning: incompatible implicit declaration of built-in function 'printf'
+../XEstation_Library/Src/User_IceDispenser.c:10:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    9 | #include "User_IceDispenser.h"
+  +++ |+#include <stdio.h>
+   10 | 
+../XEstation_Library/Src/User_IceDispenser.c:45:3: warning: incompatible implicit declaration of built-in function 'printf'
+   45 |   printf("mode : ice\n");
+      |   ^~~~~~
+../XEstation_Library/Src/User_IceDispenser.c:45:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../XEstation_Library/Src/User_IceDispenser.c:51:3: warning: incompatible implicit declaration of built-in function 'printf'
+   51 |   printf("mode : mix\n");
+      |   ^~~~~~
+../XEstation_Library/Src/User_IceDispenser.c:51:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../XEstation_Library/Src/User_IceDispenser.c: In function 'startExit':
+../XEstation_Library/Src/User_IceDispenser.c:79:2: warning: incompatible implicit declaration of built-in function 'printf'
+   79 |  printf("exit_time : %d\n", exit_time);
+      |  ^~~~~~
+../XEstation_Library/Src/User_IceDispenser.c:79:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../XEstation_Library/Src/User_IceDispenser.c:79:23: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   79 |  printf("exit_time : %d\n", exit_time);
+      |                      ~^     ~~~~~~~~~
+      |                       |     |
+      |                       int   uint32_t {aka long unsigned int}
+      |                      %ld
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/queue.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/queue.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/queue.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/queue.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/timers.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/timers.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/timers.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/timers.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_timebase_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_timebase_tim.d" -MT"Core/Src/stm32f4xx_hal_timebase_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_timebase_tim.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:153:3: warning: implicit declaration of function 'initCupLidDispensor'; did you mean 'init_iceDispensor'? [-Wimplicit-function-declaration]
+  153 |   initCupLidDispensor();
+      |   ^~~~~~~~~~~~~~~~~~~
+      |   init_iceDispensor
 arm-none-eabi-gcc -o "XEstation_MachineControl.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ethan\Documents\stm32\XE_Station_EmbeddedSystem\XEstation_MachineControl\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_MachineControl.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: XEstation_MachineControl.elf
  
 arm-none-eabi-size   XEstation_MachineControl.elf 
 arm-none-eabi-objdump -h -S  XEstation_MachineControl.elf  > "XEstation_MachineControl.list"
    text	   data	    bss	    dec	    hex	filename
-  35732	    228	  21180	  57140	   df34	XEstation_MachineControl.elf
+  36136	    508	  21172	  57816	   e1d8	XEstation_MachineControl.elf
 arm-none-eabi-objcopy  -O binary  XEstation_MachineControl.elf  "XEstation_MachineControl.bin"
 Finished building: default.size.stdout
  
-Finished building: XEstation_MachineControl.list
 Finished building: XEstation_MachineControl.bin
+Finished building: XEstation_MachineControl.list
  
  
 
-16:17:07 Build Finished. 0 errors, 25 warnings. (took 5s.393ms)
+17:30:00 Build Finished. 0 errors, 104 warnings. (took 26s.903ms)
 

@@ -6,7 +6,8 @@
 #include "hx711.h"
 
 hx711_t hx711_arr[HX711_NUM][2];
-int hx711_weight_arr[HX711_NUM][2];
+int hx711_weight_arr[HX711_NUM][3];
+
 int hx711_cali_factor[HX711_NUM][3] = {{700, 1700, 2415},//{122, 115, 7100}
 										{220, 0, 0},
 										{225, 0, 0},
@@ -63,11 +64,11 @@ void runHx711(uint8_t i)
 	hx711_weight_arr[i][CHANNEL_B] = (int)(hx711_weight(&hx711_arr[i][CHANNEL_B], 10));
 
 	if(hx711_cali_factor[i][CHANNEL_B] != 0){
-		hx711_weight_arr[i] = hx711_weight_arr[i][CHANNEL_A]+hx711_weight_arr[i][CHANNEL_B]+hx711_cali_factor[i][ZERO_VAL];
+		hx711_weight_arr[i][SUM] = hx711_weight_arr[i][CHANNEL_A]+hx711_weight_arr[i][CHANNEL_B]+hx711_cali_factor[i][ZERO_VAL];
 		printf("[%d th] A:%d g, B:%d g ====> %d g\n\n", i, hx711_weight_arr[i][CHANNEL_A], hx711_weight_arr[i][CHANNEL_B], hx711_weight_arr[i]);
 	}
 	else{
-		hx711_weight_arr[i] = hx711_weight_arr[i][CHANNEL_A];
+		hx711_weight_arr[i][SUM] = hx711_weight_arr[i][CHANNEL_A];
 		printf("[%d th] A:%d g\n", i, hx711_weight_arr[i][CHANNEL_A]);
 	}
 	HAL_Delay(100);

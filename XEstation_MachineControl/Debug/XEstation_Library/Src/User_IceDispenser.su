@@ -1,6 +1,6 @@
-User_IceDispenser.c:11:6:relayTest	16	static
-User_IceDispenser.c:24:6:iceDispenser_SetMode	16	static
-User_IceDispenser.c:49:6:init_iceDispensor	4	static
-User_IceDispenser.c:53:6:stopAll	4	static
-User_IceDispenser.c:57:9:getStatus_iceDispensor	4	static
-User_IceDispenser.c:62:6:startExit	16	static
+User_IceDispenser.c:11:6:init_iceDispensor	8	static
+User_IceDispenser.c:21:6:lever_control	16	static
+User_IceDispenser.c:31:6:iceDispenser_SetMode	24	static
+User_IceDispenser.c:55:6:stopAll	8	static
+User_IceDispenser.c:63:9:getStatus_iceDispensor	4	static
+User_IceDispenser.c:68:6:startExit	24	static
