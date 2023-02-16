@@ -38,6 +38,17 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+// PC protocol
+#define STX_idx 		0
+#define LEN_idx 		1
+#define SYNC_NUM_idx 	2
+#define CMD_idx 		3
+#define DEV_ID_idx 		4
+#define DATA_idx 		5
+#define STX_val 		0x02
+#define ETX_val 		0x03
+
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -77,9 +88,11 @@ const osThreadAttr_t myTask03_attributes = {
   .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
-uint8_t pc_res_packet[10] = {0};
+uint8_t pc_res_packet[100] = {0};
 uint8_t cupD_res_packet[10] = {0};
 uint8_t LidD_res_packet[10] = {0};
+bool pc_comm_flag = false;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,28 +110,104 @@ void StartTask02(void *argument);
 void StartTask03(void *argument);
 
 /* USER CODE BEGIN PFP */
-
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
-int _write(int file, char *ptr, int len)
-{
-	if(HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 10) == HAL_OK)
-		return len;
-	return -1;
-}
-
-uint8_t pc_res_packet[100] = {0};
+//int _write(int file, char *ptr, int len)
+//{
+//	if(HAL_UART_Transmit(&huart3, (uint8_t *)ptr, len, 10) == HAL_OK)
+//		return len;
+//	return -1;
+//}
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	if (huart->Instance == UART3) // PC
+	if (huart->Instance == USART3)
 	{
-	    HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
+//		HAL_UART_Transmit(&huart3, cupD_res_packet, sizeof(cupD_res_packet), 100);
+
+//		pc_comm_flag = true;
+//
+//		HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
+	}
+	else if (huart->Instance == UART5)
+	{
+		HAL_UART_Transmit(&huart3, cupD_res_packet, sizeof(cupD_res_packet), 100);
+
+		// calc checksum
+		int chksum = 0x00;
+		for(int i=1; i<RES_PACKET_BCC; i++){
+			chksum += cupD_res_packet[i];
+		}
+		if (cupD_res_packet[RES_PACKET_BCC] == chksum)
+			printf("check sum error!");
+
+//	    HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
+	}
+	else if (huart->Instance == USART6)
+	{
+		HAL_UART_Transmit(&huart3, LidD_res_packet, sizeof(LidD_res_packet), 100);
+
+		// calc checksum
+		int chksum = 0x00;
+		for(int i=1; i<RES_PACKET_BCC; i++){
+			chksum += LidD_res_packet[i];
+		}
+		if (LidD_res_packet[RES_PACKET_BCC] == chksum)
+			printf("check sum error!");
+
+//	    HAL_UART_Receive_IT(&huart6, LidD_res_packet, sizeof(LidD_res_packet));
 	}
 }
+
+
+void pcSerialTest(void)
+{
+	uint8_t buf = 0;
+	uint8_t stx = 0;
+	uint8_t len = 0;
+
+	// receive packet
+	HAL_UART_Receive(&huart3, &stx, sizeof(stx), 10);
+
+
+	// STX
+	if (stx == 0x02){
+
+		// LEN
+		HAL_UART_Receive(&huart3, &len, sizeof(len), 10);
+		uint8_t *data_arr = (uint8_t*)malloc(sizeof(uint8_t) * (len+3));
+
+		for(int i=0; i<len+3; i++){
+			data_arr[i] = 0;
+		}
+
+		data_arr[0] = 0x02;
+		data_arr[1] = len;
+
+		for(int i=2; i<len+2; i++)
+		{
+			HAL_UART_Receive(&huart3, &buf, sizeof(buf), 10);
+
+			if(buf != NULL)
+				data_arr[i] = buf;
+		}
+
+		// check checksum
+		uint8_t CheckSum = 0;
+		for(int i = 2; i < len; i++)
+			CheckSum ^= data_arr[i];
+
+		data_arr[len+2] = CheckSum;
+
+		// transmit packet
+		HAL_UART_Transmit(&huart3, (uint8_t *)data_arr, (len+3), 100);
+		free(data_arr);
+	}
+}
+
 
 /* USER CODE END 0 */
 
@@ -162,6 +251,8 @@ int main(void)
   init_powderMachine();
   init_iceDispensor();
 
+  HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
+
 //  SteppingMotorTest();
 //  printf("ice dispenser test start !\n");
 
@@ -182,7 +273,7 @@ int main(void)
   /* USER CODE END 2 */
 
   /* Init scheduler */
-  osKernelInitialize();
+//  osKernelInitialize();
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
@@ -202,13 +293,13 @@ int main(void)
 
   /* Create the thread(s) */
   /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* creation of myTask02 */
-  myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
-
-  /* creation of myTask03 */
-  myTask03Handle = osThreadNew(StartTask03, NULL, &myTask03_attributes);
+//  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+//
+//  /* creation of myTask02 */
+//  myTask02Handle = osThreadNew(StartTask02, NULL, &myTask02_attributes);
+//
+//  /* creation of myTask03 */
+//  myTask03Handle = osThreadNew(StartTask03, NULL, &myTask03_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -219,7 +310,7 @@ int main(void)
   /* USER CODE END RTOS_EVENTS */
 
   /* Start scheduler */
-  osKernelStart();
+//  osKernelStart();
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
@@ -232,59 +323,50 @@ int main(void)
 //	  SteppingMotorTest();
 //	  L298Ntest();
 //	  heaterTest();
-	  HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
-		while(1){
-			HAL_UART_Receive(&huart3, &stx, sizeof(stx), 10);
-			// STX
-			if (stx == 0x02){
-				rxbuf[0] = stx;
+	  pcSerialTest();
 
-				break;
-			}
-		}
-		// LEN
-		HAL_UART_Receive(&huart3, &len, sizeof(len), 10);
-		rxbuf[1] = len;
-		uint8_t len =
 
-		uint8_t *data_arr = (uint8_t*)malloc(sizeof(uint8_t) * (len+2));
-		for(int i=0; i<len+2; i++){
-			data_arr[i] = 0;
-		}
-		i = 2;
-
-		while(1){
-			HAL_UART_Receive(&huart3, &buf, sizeof(buf), 10);
-
-			if(buf != NULL){
-				rxbuf[i] = buf;
-				data_arr[i] = buf;
-				i += 1;
-				if (buf == 0x03){
-					HAL_UART_Receive(&huart3, &buf, sizeof(buf), 10);
-					rxbuf[i] = buf;
-					data_arr[i] = buf;
-					break;
-				}
-			}
-		}
-		data_arr[0] = stx;
-		data_arr[1] = len;
-
-		// check checksum
-		uint8_t CheckSum = 0;
-		for(int i = 2; i < len; i++)
-		{
-			CheckSum ^= data_arr[i];
-		}
-		data_arr[len+1] = CheckSum;
-
-		// transmit packet
-		HAL_UART_Transmit(&huart3, (uint8_t *)data_arr, (len+2), 100);
-		free(data_arr);
-
-	HAL_Delay(500);
-
+//	  if (pc_comm_flag == true)
+//	  {
+//		uint8_t test_arr[4] = {0,0,2,3};
+//		HAL_UART_Transmit(&huart3, (uint8_t *)test_arr, sizeof(test_arr), 100);
+//
+//	  // STX
+//		if (pc_res_packet[STX_idx] == STX_val){
+//			// LEN
+//			uint8_t *data_arr = (uint8_t*)malloc(sizeof(uint8_t) * (pc_res_packet[LEN_idx]+2));
+//
+//			// init data_arr array
+//			for(int i=0; i<pc_res_packet[LEN_idx]+2; i++){
+//				data_arr[i] = pc_res_packet[i];
+//			}
+//
+//			// check checksum
+//			uint8_t CheckSum = 0;
+//			for(int i = 2; i < pc_res_packet[LEN_idx]; i++)
+//			{
+//				CheckSum ^= data_arr[i];
+//			}
+//			data_arr[pc_res_packet[LEN_idx]+1] = CheckSum;
+//
+//			if (CheckSum == pc_res_packet[LEN_idx+1] && ETX_val == pc_res_packet[LEN_idx+2])
+//			{
+//				// transmit packet
+//				HAL_UART_Transmit(&huart3, (uint8_t *)data_arr, (data_arr[LEN_idx]+2), 100);
+//			}
+//			else{
+//				for(int i=2; i<pc_res_packet[LEN_idx]; i++){
+//					data_arr[i] = 0x00;
+//				} // error msg
+//				HAL_UART_Transmit(&huart3, (uint8_t *)data_arr, (data_arr[LEN_idx]+2), 100);
+//			}
+//
+//			free(data_arr);
+//		}
+//		pc_comm_flag = false;
+//		HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
+//	  }
+//	  HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }

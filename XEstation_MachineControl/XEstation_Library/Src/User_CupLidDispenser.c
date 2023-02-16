@@ -40,42 +40,7 @@ bool 	is_detected[][OFFSET] 			= {{false, false},
 bool 	is_running[OFFSET] 				= {false, false};
 char uartBuf[4000];
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-	if (huart->Instance == USART3)
-	{
-//		HAL_UART_Transmit(&huart3, cupD_res_packet, sizeof(cupD_res_packet), 100);
-	    HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
-	}
-	else if (huart->Instance == UART5)
-	{
-		HAL_UART_Transmit(&huart3, cupD_res_packet, sizeof(cupD_res_packet), 100);
 
-		// calc checksum
-		int chksum = 0x00;
-		for(int i=1; i<RES_PACKET_BCC; i++){
-			chksum += cupD_res_packet[i];
-		}
-		if (cupD_res_packet[RES_PACKET_BCC] == chksum)
-			printf("check sus error!");
-
-//	    HAL_UART_Receive_IT(&huart5, cupD_res_packet, sizeof(cupD_res_packet));
-	}
-	else if (huart->Instance == USART6)
-	{
-		HAL_UART_Transmit(&huart3, LidD_res_packet, sizeof(LidD_res_packet), 100);
-
-		// calc checksum
-		int chksum = 0x00;
-		for(int i=1; i<RES_PACKET_BCC; i++){
-			chksum += LidD_res_packet[i];
-		}
-		if (LidD_res_packet[RES_PACKET_BCC] == chksum)
-			printf("check sus error!");
-
-//	    HAL_UART_Receive_IT(&huart6, LidD_res_packet, sizeof(LidD_res_packet));
-	}
-}
 
 void SteppingMotorTest(void)
 {
