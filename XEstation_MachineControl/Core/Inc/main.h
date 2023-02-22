@@ -56,8 +56,6 @@ typedef enum { false, true } bool;
 #define LID_D 0x03
 /* USER CODE END EM */
 
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -70,6 +68,8 @@ void Error_Handler(void);
 #define PD02_DCmix_EN_GPIO_Port GPIOE
 #define PD04_DCpowder_IN2_Pin GPIO_PIN_3
 #define PD04_DCpowder_IN2_GPIO_Port GPIOE
+#define PD02_DCpowder_EN_Pin GPIO_PIN_5
+#define PD02_DCpowder_EN_GPIO_Port GPIOE
 #define PD04_DCpowder_IN1_Pin GPIO_PIN_6
 #define PD04_DCpowder_IN1_GPIO_Port GPIOE
 #define PD02_DCpowder_IN1_Pin GPIO_PIN_2
@@ -88,10 +88,6 @@ void Error_Handler(void);
 #define PD05_DCpowder_IN2_GPIO_Port GPIOF
 #define PD01_DCpowder_EN_Pin GPIO_PIN_10
 #define PD01_DCpowder_EN_GPIO_Port GPIOF
-#define PD02_DCpowder_EN_Pin GPIO_PIN_0
-#define PD02_DCpowder_EN_GPIO_Port GPIOH
-#define PD02_DCpowder_IN2_Pin GPIO_PIN_1
-#define PD02_DCpowder_IN2_GPIO_Port GPIOH
 #define ICE01_water_Pin GPIO_PIN_0
 #define ICE01_water_GPIO_Port GPIOC
 #define Cup_down_Pin GPIO_PIN_2
@@ -164,6 +160,8 @@ void Error_Handler(void);
 #define PD05_heat_IN1_GPIO_Port GPIOD
 #define PD05_heat_IN2_Pin GPIO_PIN_15
 #define PD05_heat_IN2_GPIO_Port GPIOD
+#define PD02_DCpowder_IN2_Pin GPIO_PIN_3
+#define PD02_DCpowder_IN2_GPIO_Port GPIOG
 #define PD01_heat_IN1_Pin GPIO_PIN_6
 #define PD01_heat_IN1_GPIO_Port GPIOC
 #define PD04_heat_EN_Pin GPIO_PIN_7

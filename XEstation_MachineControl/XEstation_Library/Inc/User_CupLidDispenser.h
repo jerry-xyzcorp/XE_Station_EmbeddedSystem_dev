@@ -22,6 +22,7 @@
 #define STATUS_CHECK 	0
 #define DISPATCH_1_CUP 	1
 #define IS_FINISHED 	2
+
 #define IS_CUP_EXITED	6
 #define RES_PACKET_BCC	10
 #define CUP_EXITED		0x10
@@ -38,12 +39,13 @@
 
 #define LEN 1
 
+bool initCupLidDispensor(void);
 void SteppingMotorTest(void);
 void pulseMaker(uint16_t time);
 void controlSteppingMotor(uint8_t device_id, bool cmd, uint8_t dir, uint16_t angle, uint8_t freq);
 bool motorShutdownAll_cupDispensor(void);
 uint8_t getStatus_cupDispensor(void);
-bool dispatch(uint8_t device_id);
+bool cup_lid_dispatch(uint8_t device_id);
 void sendCommand(uint8_t device_id, uint8_t cmd);
 
 #endif /* INC_USER_CUPLIDDISPENSER_H_ */

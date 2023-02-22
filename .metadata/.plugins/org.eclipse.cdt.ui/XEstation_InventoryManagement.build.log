@@ -1,36 +1,10 @@
-23:17:52 **** Incremental Build of configuration Debug for project XEstation_InventoryManagement ****
+10:52:27 **** Build of configuration Debug for project XEstation_InventoryManagement ****
 make -j8 all 
-arm-none-eabi-gcc "../XEstation_Library/Src/User_TFminiS.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"XEstation_Library/Src/User_TFminiS.d" -MT"XEstation_Library/Src/User_TFminiS.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "XEstation_Library/Src/User_TFminiS.o"
-../XEstation_Library/Src/User_TFminiS.c: In function 'initTFminiS':
-../XEstation_Library/Src/User_TFminiS.c:36:10: warning: unused variable 'stock_size_info' [-Wunused-variable]
-   36 |  uint8_t stock_size_info[] = {90,90,90,20,20,20,20,20,20,20,20};
-      |          ^~~~~~~~~~~~~~~
-../XEstation_Library/Src/User_TFminiS.c: In function 'set_thresh':
-../XEstation_Library/Src/User_TFminiS.c:51:6: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-   51 |  if (TFminiS_info[ID][_OFFSET] = threashold)
-      |      ^~~~~~~~~~~~
-../XEstation_Library/Src/User_TFminiS.c: In function 'TFminiS_I2C':
-../XEstation_Library/Src/User_TFminiS.c:97:9: warning: function returns address of local variable [-Wreturn-local-addr]
-   97 |  return rxdata;
-      |         ^~~~~~
-../XEstation_Library/Src/User_TFminiS.c: In function 'getDistance':
-../XEstation_Library/Src/User_TFminiS.c:141:10: warning: unused variable 'ID' [-Wunused-variable]
-  141 |  uint8_t ID = sensor_id - ID_OFFSET;
-      |          ^~
-arm-none-eabi-gcc -o "XEstation_InventoryManagement.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ethan\Documents\stm32\XE_Station_EmbeddedSystem\XEstation_InventoryManagement\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_InventoryManagement.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: XEstation_InventoryManagement.elf
- 
 arm-none-eabi-size   XEstation_InventoryManagement.elf 
-arm-none-eabi-objdump -h -S  XEstation_InventoryManagement.elf  > "XEstation_InventoryManagement.list"
    text	   data	    bss	    dec	    hex	filename
-  40320	    644	  19700	  60664	   ecf8	XEstation_InventoryManagement.elf
-arm-none-eabi-objcopy  -O binary  XEstation_InventoryManagement.elf  "XEstation_InventoryManagement.bin"
+  47024	    644	  21996	  69664	  11020	XEstation_InventoryManagement.elf
 Finished building: default.size.stdout
  
-Finished building: XEstation_InventoryManagement.list
-Finished building: XEstation_InventoryManagement.bin
- 
- 
 
-23:17:58 Build Finished. 0 errors, 4 warnings. (took 5s.531ms)
+10:52:28 Build Finished. 0 errors, 0 warnings. (took 1s.36ms)
 

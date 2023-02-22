@@ -8,7 +8,7 @@
 
 #include "User_IceDispenser.h"
 
-void init_iceDispensor(void)
+bool init_iceDispensor(void)
 {
 	HAL_GPIO_WritePin(ICE01_relay_GPIO_Port, ICE01_relay_Pin, GPIO_PIN_SET);	// Relay Open
 
@@ -16,6 +16,8 @@ void init_iceDispensor(void)
 	HAL_GPIO_WritePin(ICE01_ice_GPIO_Port, ICE01_ice_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(ICE01_mix_GPIO_Port, ICE01_mix_Pin, GPIO_PIN_SET);
 	HAL_Delay(1000);
+
+	return true;
 }
 
 void lever_control(uint32_t exit_time)
@@ -65,8 +67,16 @@ uint8_t getStatus_iceDispensor(void)
 	return ERROR;
 }
 
-bool startExit(uint32_t water_time, uint32_t ice_time)
+bool startExit(uint32_t water_gram, uint32_t ice_gram)
 {
+	uint32_t water_time = 0;
+	uint32_t ice_time = 2700; //223g/243g
+
+	if (water_gram == 100)
+		water_time = 3000;
+	if (ice_gram == 264)
+		ice_time = 3000;
+
 	// set mode - ice, water, mix
 	iceDispenser_SetMode(water_time, ice_time);
 

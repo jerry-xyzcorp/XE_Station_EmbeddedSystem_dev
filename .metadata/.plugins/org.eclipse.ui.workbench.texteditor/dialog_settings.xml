@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="ICE01_ice"/>
+		<item key="selection" value="sendCommand"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="sendCommand"/>
+			<item value="cup_lid_dispatch"/>
+			<item value="main"/>
+			<item value="MAKE_B"/>
 			<item value="ICE01_ice"/>
 			<item value="ICE01"/>
 			<item value="ICE01_water_Pin"/>
@@ -19,10 +23,6 @@
 			<item value="PD01_dout_Pin"/>
 			<item value="PD01_dout_GPIO_Port"/>
 			<item value="PD01_sck_GPIO_Port"/>
-			<item value="read"/>
-			<item value="hx711_calibration"/>
-			<item value="coef"/>
-			<item value="response_packet_protocol_run_3d"/>
 		</list>
 		<list key="replacehistory">
 		</list>

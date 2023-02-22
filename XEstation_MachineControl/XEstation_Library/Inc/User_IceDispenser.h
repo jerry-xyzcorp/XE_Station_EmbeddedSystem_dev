@@ -10,13 +10,14 @@
 
 #include "main.h"
 
-
+bool is_iceDispensor_running;
+bool is_iceDispensor_busy;
 
 void relayTest(void);
 void iceDispenser_SetMode(uint16_t water_time, uint16_t ice_time);
 
 
-void init_iceDispensor(void);
+bool init_iceDispensor(void);
 bool stopAll(void);
 uint8_t getStatus_iceDispensor(void);
 bool startExit(uint32_t water_time, uint32_t ice_time);
