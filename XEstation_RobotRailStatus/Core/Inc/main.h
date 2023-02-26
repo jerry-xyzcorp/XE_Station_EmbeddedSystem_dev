@@ -32,7 +32,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+typedef enum { false, true } bool;
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -68,12 +68,20 @@ void Error_Handler(void);
 #define robotEstop_pendant_GPIO_Port GPIOE
 #define protective_Pin GPIO_PIN_6
 #define protective_GPIO_Port GPIOE
+#define robotOff_Pin GPIO_PIN_7
+#define robotOff_GPIO_Port GPIOF
 #define robotOn_Pin GPIO_PIN_8
 #define robotOn_GPIO_Port GPIOF
+#define ledReset_Pin GPIO_PIN_9
+#define ledReset_GPIO_Port GPIOF
 #define PC_TX_Pin GPIO_PIN_10
 #define PC_TX_GPIO_Port GPIOC
 #define PC_RX_Pin GPIO_PIN_11
 #define PC_RX_GPIO_Port GPIOC
+#define PC_TX2_Pin GPIO_PIN_12
+#define PC_TX2_GPIO_Port GPIOC
+#define PC_RX2_Pin GPIO_PIN_2
+#define PC_RX2_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

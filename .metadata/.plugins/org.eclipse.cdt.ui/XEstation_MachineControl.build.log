@@ -1,42 +1,10 @@
-22:09:04 **** Incremental Build of configuration Debug for project XEstation_MachineControl ****
+21:53:19 **** Incremental Build of configuration Debug for project XEstation_MachineControl ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'pcSerialTest':
-../Core/Src/main.c:183:33: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
-  183 |   uint8_t *data_arr = (uint8_t*)malloc(sizeof(uint8_t) * (len+3));
-      |                                 ^~~~~~
-../Core/Src/main.c:183:33: warning: incompatible implicit declaration of built-in function 'malloc'
-../Core/Src/main.c:32:1: note: include '<stdlib.h>' or provide a declaration of 'malloc'
-   31 | #include "User_IceDispenser.h"
-  +++ |+#include <stdlib.h>
-   32 | /* USER CODE END Includes */
-../Core/Src/main.c:196:11: warning: comparison between pointer and integer
-  196 |    if(buf != NULL)
-      |           ^~
-../Core/Src/main.c:210:3: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
-  210 |   free(data_arr);
-      |   ^~~~
-../Core/Src/main.c:210:3: warning: incompatible implicit declaration of built-in function 'free'
-../Core/Src/main.c:210:3: note: include '<stdlib.h>' or provide a declaration of 'free'
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:256:3: warning: implicit declaration of function 'initCupLidDispensor'; did you mean 'init_iceDispensor'? [-Wimplicit-function-declaration]
-  256 |   initCupLidDispensor();
-      |   ^~~~~~~~~~~~~~~~~~~
-      |   init_iceDispensor
-arm-none-eabi-gcc -o "XEstation_MachineControl.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Ethan\Documents\stm32\XE_Station_EmbeddedSystem\XEstation_MachineControl\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_MachineControl.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: XEstation_MachineControl.elf
- 
 arm-none-eabi-size   XEstation_MachineControl.elf 
-arm-none-eabi-objdump -h -S  XEstation_MachineControl.elf  > "XEstation_MachineControl.list"
    text	   data	    bss	    dec	    hex	filename
   25436	    504	   3464	  29404	   72dc	XEstation_MachineControl.elf
-arm-none-eabi-objcopy  -O binary  XEstation_MachineControl.elf  "XEstation_MachineControl.bin"
 Finished building: default.size.stdout
  
-Finished building: XEstation_MachineControl.list
-Finished building: XEstation_MachineControl.bin
- 
- 
 
-22:09:06 Build Finished. 0 errors, 6 warnings. (took 2s.782ms)
+21:53:20 Build Finished. 0 errors, 0 warnings. (took 605ms)
 

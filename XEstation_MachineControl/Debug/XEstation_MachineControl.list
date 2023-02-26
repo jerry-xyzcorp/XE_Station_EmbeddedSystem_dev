@@ -29,9 +29,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  000201f0  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0001b966  00000000  00000000  00020220  2**0
+ 13 .debug_info   0001b965  00000000  00000000  00020220  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00003786  00000000  00000000  0003bb86  2**0
+ 14 .debug_abbrev 00003786  00000000  00000000  0003bb85  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_aranges 00001428  00000000  00000000  0003f310  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00004c60  00000000  00000000  00041a18  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00016b7d  00000000  00000000  00046678  2**0
+ 18 .debug_line   00016b9f  00000000  00000000  00046678  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e63c5  00000000  00000000  0005d1f5  2**0
+ 19 .debug_str    000e63ce  00000000  00000000  0005d217  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  001435ba  2**0
+ 20 .comment      00000053  00000000  00000000  001435e5  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00005b4c  00000000  00000000  00143610  2**2
+ 21 .debug_frame  00005b4c  00000000  00000000  00143638  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -430,7 +430,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  8000594:	4a2a      	ldr	r2, [pc, #168]	; (8000640 <HAL_UART_RxCpltCallback+0xb8>)
  8000596:	4293      	cmp	r3, r2
  8000598:	d04e      	beq.n	8000638 <HAL_UART_RxCpltCallback+0xb0>
-//		HAL_UART_Transmit(&huart3, (uint8_t *)test_arr, sizeof(test_arr), 100);
+
 //		pc_comm_flag = true;
 //
 //		HAL_UART_Receive_IT(&huart3, pc_res_packet, sizeof(pc_res_packet));
@@ -661,7 +661,6 @@ void pcSerialTest(void)
  80006f8:	dde9      	ble.n	80006ce <pcSerialTest+0x72>
 		}
 
-
 		// check checksum
 		uint8_t CheckSum = 0;
  80006fa:	2300      	movs	r3, #0
@@ -710,9 +709,6 @@ void pcSerialTest(void)
  8000740:	6878      	ldr	r0, [r7, #4]
  8000742:	f004 ff0f 	bl	8005564 <free>
 	}
-
-//		HAL_UART_Receive(&huart3, &stx, sizeof(stx), 10);
-
 }
  8000746:	bf00      	nop
  8000748:	3718      	adds	r7, #24

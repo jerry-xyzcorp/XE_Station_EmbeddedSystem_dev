@@ -38,9 +38,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_IceDispenser.h
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h \
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h \
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_MachineControl/XEstation_Library/Inc/User_IceDispenser.h
 
 ../Core/Inc/main.h:
 
@@ -122,8 +122,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_MachineControl/XEstation_Library/Inc/User_beverageManufacturing.h:
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_MachineControl/XEstation_Library/Inc/User_CupLidDispenser.h:
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_MachineControl/XEstation_Library/Inc/User_IceDispenser.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_MachineControl/XEstation_Library/Inc/User_IceDispenser.h:

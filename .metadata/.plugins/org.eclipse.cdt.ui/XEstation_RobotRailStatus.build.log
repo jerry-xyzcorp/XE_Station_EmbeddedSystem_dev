@@ -1,0 +1,37 @@
+21:54:44 **** Incremental Build of configuration Debug for project XEstation_RobotRailStatus ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'receivePcCmd':
+../Core/Src/main.c:116:33: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+  116 |   uint8_t *data_arr = (uint8_t*)malloc(sizeof(uint8_t) * (len+2));
+      |                                 ^~~~~~
+../Core/Src/main.c:116:33: warning: incompatible implicit declaration of built-in function 'malloc'
+../Core/Src/main.c:22:1: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+   21 | #include "main.h"
+  +++ |+#include <stdlib.h>
+   22 | 
+../Core/Src/main.c:129:11: warning: comparison between pointer and integer
+  129 |    if(buf != NULL)
+      |           ^~
+../Core/Src/main.c:143:3: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  143 |   free(data_arr);
+      |   ^~~~
+../Core/Src/main.c:143:3: warning: incompatible implicit declaration of built-in function 'free'
+../Core/Src/main.c:143:3: note: include '<stdlib.h>' or provide a declaration of 'free'
+arm-none-eabi-gcc -o "XEstation_RobotRailStatus.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gad05\Documents\XE_station\XE_Station_EmbeddedSystem_dev\XEstation_RobotRailStatus\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XEstation_RobotRailStatus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: XEstation_RobotRailStatus.elf
+ 
+arm-none-eabi-size   XEstation_RobotRailStatus.elf 
+arm-none-eabi-objdump -h -S  XEstation_RobotRailStatus.elf  > "XEstation_RobotRailStatus.list"
+arm-none-eabi-objcopy  -O binary  XEstation_RobotRailStatus.elf  "XEstation_RobotRailStatus.bin"
+   text	   data	    bss	    dec	    hex	filename
+  12504	    120	   1920	  14544	   38d0	XEstation_RobotRailStatus.elf
+Finished building: default.size.stdout
+ 
+Finished building: XEstation_RobotRailStatus.bin
+ 
+Finished building: XEstation_RobotRailStatus.list
+ 
+
+21:54:46 Build Finished. 0 errors, 5 warnings. (took 1s.636ms)
+

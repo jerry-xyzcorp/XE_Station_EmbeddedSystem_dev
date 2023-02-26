@@ -1,6 +1,6 @@
 XEstation_Library/Src/User_PC_serial.o: \
  ../XEstation_Library/Src/User_PC_serial.c \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h \
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h \
  ../Core/Inc/main.h ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -32,7 +32,7 @@ XEstation_Library/Src/User_PC_serial.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h:
 
 ../Core/Inc/main.h:
 

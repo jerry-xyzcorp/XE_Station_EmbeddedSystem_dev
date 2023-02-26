@@ -40,9 +40,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_hx711.h \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h \
- C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_TFminiS.h
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_hx711.h \
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h \
+ C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_TFminiS.h
 
 ../Core/Inc/main.h:
 
@@ -128,8 +128,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_hx711.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_hx711.h:
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_PC_serial.h:
 
-C:/Users/Ethan/Documents/stm32/XE_Station_EmbeddedSystem/XEstation_InventoryManagement/XEstation_Library/Inc/User_TFminiS.h:
+C:/Users/gad05/Documents/XE_station/XE_Station_EmbeddedSystem_dev/XEstation_InventoryManagement/XEstation_Library/Inc/User_TFminiS.h:
